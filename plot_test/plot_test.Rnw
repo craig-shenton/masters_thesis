@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\section*{plot test}
+
+First make something to plot
+(simulate regression data).
+<<reg>>=
+n <- 50
+x <- seq(1, n)
+a.true <- 3
+b.true <- 1.5
+y.true <- a.true + b.true * x
+s.true <- 17.3
+y <- y.true + s.true * rnorm(n)
+out1 <- lm(y ~ x)
+@
+
+
+Figure~\ref{fig:one} (p.~\pageref{fig:one})
+is produced by the following code
+<<label=fig1plot,include=FALSE>>=
+plot(x, y)
+abline(out1)
+@
+
+\begin{figure}[h!]
+  \centering
+<<label=fig1,fig=TRUE,echo=FALSE>>=
+<<fig1plot>>
+@
+
+\caption{Scatter Plot with Regression Line}
+\label{fig:one}
+\end{figure}
+Note that \verb@x@, \verb@y@, and \verb@out1@ are remembered from
+the preceding code chunk.  We don't have to regenerate them.
+All code chunks are part of one R ``session''.
+
+
+\end{document}
