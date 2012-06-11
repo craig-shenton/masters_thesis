@@ -1,0 +1,2241 @@
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.9.21)  9 JUN 2012 13:24
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**sweaveTemplate.tex
+(./sweaveTemplate.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, ancientgreek, ibycus, arabic, armenian
+, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutch, u
+kenglish, usenglishmax, esperanto, estonian, farsi, finnish, french, galician, 
+german, ngerman, swissgerman, monogreek, greek, hungarian, icelandic, assamese,
+ bengali, gujarati, hindi, kannada, malayalam, marathi, oriya, panjabi, tamil, 
+telugu, indonesian, interlingua, irish, italian, kurmanji, lao, latin, latvian,
+ lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, polish, portuguese, roma
+nian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, turkish,
+ turkmen, ukrainian, uppersorbian, welsh, loaded.
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/02/14 v0.04n Graphics/color for pdfTeX
+\Gread@gobject=\count87
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fontspec/fontspec.sty
+Package: fontspec 2010/07/14 v2.0b Advanced font selection for XeLaTeX/LuaLaTeX
+
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/expl3.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3names.sty
+Package: l3names 2010/07/11 v1981 L3 Experimental Naming Scheme for TeX Primiti
+ves
+)
+Package: expl3 2010/07/13 v1982 L3 Experimental code bundle wrapper
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count88
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3basics.sty
+Package: l3basics 2010/06/07 v1942 L3 Experimental basic definitions
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3expan.sty
+Package: l3expan 2010/06/10 v1948 L3 Experimental Argument Expansion module
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3tl.sty
+Package: l3tl 2010/05/22 v1919 L3 Experimental Token Lists
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3intexpr.sty
+Package: l3intexpr 2010/06/15 v1957 L3 Integer Expressions
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3quark.sty
+Package: l3quark 2010/03/21 v1853 L3 Experimental Quark Commands
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3seq.sty
+Package: l3seq 2010/03/29 v1879 L3 Experimental sequences and stacks
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3toks.sty
+Package: l3toks 2010/05/25 v1933 L3 Experimental Token Registers
+\l_tmpb_toks=\toks14
+\l_tmpc_toks=\toks15
+\g_tmpa_toks=\toks16
+\g_tmpb_toks=\toks17
+\g_tmpc_toks=\toks18
+\c_empty_toks=\toks19
+\l_tl_replace_toks=\toks20
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3int.sty
+Package: l3int 2010/05/25 v1933 L3 Experimental Integer module
+\l_tmpa_int=\count89
+\l_tmpb_int=\count90
+\l_tmpc_int=\count91
+\g_tmpa_int=\count92
+\g_tmpb_int=\count93
+\c_max_int=\count94
+\g_tl_inline_level_int=\count95
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3prg.sty
+Package: l3prg 2010/03/21 v1853 L3 Experimental control structures
+\g_prg_inline_level_int=\count96
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3clist.sty
+Package: l3clist 2010/03/29 v1878 L3 Experimental comma separated lists
+\g_clist_inline_level_int=\count97
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3token.sty
+Package: l3token 2010/04/11 v1890 L3 Experimental token investigation and manip
+ulation
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3prop.sty
+Package: l3prop 2010/03/21 v1857 L3 Experimental Property Lists
+\g_prop_inline_level_int=\count98
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3msg.sty
+Package: l3msg 2010/03/23 v1866 L3 Experimental LaTeX Messages module
+\l_msg_redirect_classes_prop=\toks21
+\l_msg_redirect_names_prop=\toks22
+\l_msg_redirect_fatal_prop=\toks23
+\l_msg_redirect_error_prop=\toks24
+\l_msg_redirect_warning_prop=\toks25
+\l_msg_redirect_info_prop=\toks26
+\l_msg_redirect_log_prop=\toks27
+\l_msg_redirect_trace_prop=\toks28
+\l_msg_redirect_none_prop=\toks29
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3io.sty
+Package: l3io 2010/05/22 v1923 L3 Experimental i/o module
+\g_iow_streams_prop=\toks30
+\g_ior_streams_prop=\toks31
+\l_iow_stream_int=\count99
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3skip.sty
+Package: l3skip 2010/05/25 v1933 L3 Experimental skip registers
+\l_tmpa_skip=\skip43
+\l_tmpb_skip=\skip44
+\l_tmpc_skip=\skip45
+\g_tmpa_skip=\skip46
+\g_tmpb_skip=\skip47
+\l_tmpa_dim=\dimen103
+\l_tmpb_dim=\dimen104
+\l_tmpc_dim=\dimen105
+\l_tmpd_dim=\dimen106
+\g_tmpa_dim=\dimen107
+\g_tmpb_dim=\dimen108
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3box.sty
+Package: l3box 2010/05/22 v1919 L3 Experimental Box module
+\l_tmpb_box=\box26
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3keyval.sty
+Package: l3keyval 2010/04/11 v1890 L3 Experimental keyval processing
+\l_KV_level_int=\count100
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3keys.sty
+Package: l3keys 2010/05/24 v1931 L3 Experimental key-value support
+\l_keys_choice_int=\count101
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3precom.sty
+Package: l3precom 2010/02/09 v1793 L3 Experimental precompilation module
+\g_gen_sym_int=\count102
+\g_ggen_sym_int=\count103
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3xref.sty
+Package: l3xref 2010/02/09 v1786 L3 Experimental cross referencing
+\g_xref_all_curr_immediate_fields_prop=\toks32
+\g_xref_all_curr_deferred_fields_prop=\toks33
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3file.sty
+Package: l3file 2010/03/21 v1853 L3 Experimental file loading
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/expl3/l3fp.sty
+Package: l3fp 2010/07/08 v1979 L3 Experimental floating-point operations
+\l_fp_input_a_integer_int=\count104
+\l_fp_input_a_decimal_int=\count105
+\l_fp_input_b_integer_int=\count106
+\l_fp_input_b_decimal_int=\count107
+\l_fp_input_a_sign_int=\count108
+\l_fp_input_b_sign_int=\count109
+\l_fp_split_sign_int=\count110
+\l_fp_mul_a_i_int=\count111
+\l_fp_mul_a_ii_int=\count112
+\l_fp_mul_a_iii_int=\count113
+\l_fp_mul_a_iv_int=\count114
+\l_fp_mul_a_v_int=\count115
+\l_fp_mul_a_vi_int=\count116
+\l_fp_mul_b_i_int=\count117
+\l_fp_mul_b_ii_int=\count118
+\l_fp_mul_b_iii_int=\count119
+\l_fp_mul_b_iv_int=\count120
+\l_fp_mul_b_v_int=\count121
+\l_fp_mul_b_vi_int=\count122
+\l_fp_mul_output_int=\count123
+\l_fp_div_count_int=\count124
+\l_fp_div_offset_int=\count125
+\l_fp_output_sign_int=\count126
+\l_fp_output_integer_int=\count127
+\l_fp_output_decimal_int=\count128
+\l_fp_round_discard_int=\count129
+\l_fp_round_position_int=\count130
+\l_fp_tmp_int=\count131
+\c_one_hundred_million=\count132
+\c_one_thousand_million=\count133
+\l_fp_tmp_dim=\dimen109
+\l_fp_round_precision_int=\count134
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count135
+\calc@Bcount=\count136
+\calc@Adimen=\dimen110
+\calc@Bdimen=\dimen111
+\calc@Askip=\skip48
+\calc@Bskip=\skip49
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count137
+\calc@Cskip=\skip50
+))
+(/usr/local/texlive/2010/texmf-dist/tex/latex/xpackages/xbase/xparse.sty
+Package: xparse 2010/05/23 v1927 Generic document command parser
+\c_xparse_shorthands_prop=\toks34
+\l_xparse_m_args_int=\count138
+\l_xparse_mandatory_args_int=\count139
+\l_xparse_processor_int=\count140
+\l_xparse_total_args_int=\count141
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/kastrup/binhex.tex)
+! fontspec Error
+
+(fontspec) Requires XeTeX or LuaTeX to function!
+
+For immediate help type H <return>.
+ ...                                              
+                                                  
+l.35 }
+      
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit
+
+\c@zf@newff=\count142
+\c@zf@index=\count143
+\c@zf@script=\count144
+\c@zf@language=\count145
+\l_fontspec_strnum_int=\count146
+(/usr/local/texlive/2010/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks35
+\XKV@tempa@toks=\toks36
+\XKV@depth=\count147
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/xkeyval/keyval.tex)))
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fontspec/fontspec-patches.sty
+Package: fontspec-patches 2010/07/14 v2.0b Advanced font selection for XeLaTeX/
+LuaLaTeX
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+)
+LaTeX Info: Redefining \em on input line 23.
+LaTeX Info: Redefining \emph on input line 27.
+LaTeX Info: Redefining \- on input line 30.
+)
+! Undefined control sequence.
+<recently read> \xetex_or_luatex:nnn 
+                                     
+l.248 \xetex_or_luatex:nnn
+                           {\tl_set:Nn \zf@enc} {EU1} {EU2}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \tl_set:Nn has an extra }.
+<inserted text> 
+                \par 
+l.248 \xetex_or_luatex:nnn {\tl_set:Nn \zf@enc}
+                                                {EU1} {EU2}
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+! Paragraph ended before \tl_set:Nn was complete.
+<to be read again> 
+                   \par 
+l.248 \xetex_or_luatex:nnn {\tl_set:Nn \zf@enc}
+                                                {EU1} {EU2}
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.248 \xetex_or_luatex:nnn {\tl_set:Nn \zf@enc} {E
+                                                  U1} {EU2}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\reserved@b ...d \@onefilewithoptions #1[{\zf@enc 
+                                                  }][{}]\noexpand \@pkgexten...
+l.253 \tl_set_eq:NN
+                    \UTFencname \zf@enc % for xunicode
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+)
+ LaTeX Info: Defining document command \fontspec
+(LaTeX)  with arg. spec. 'O{}m' on line 264.
+
+ LaTeX Info: Defining document command \setmainfont
+(LaTeX)  with arg. spec. 'O{}m' on line 268.
+
+ LaTeX Info: Defining document command \setsansfont
+(LaTeX)  with arg. spec. 'O{}m' on line 272.
+
+ LaTeX Info: Defining document command \setmonofont
+(LaTeX)  with arg. spec. 'O{}m' on line 276.
+
+ LaTeX Info: Defining document command \setmathrm
+(LaTeX)  with arg. spec. 'O{}m' on line 280.
+
+ LaTeX Info: Defining document command \setboldmathrm
+(LaTeX)  with arg. spec. 'O{}m' on line 283.
+
+ LaTeX Info: Defining document command \setmathsf
+(LaTeX)  with arg. spec. 'O{}m' on line 286.
+
+ LaTeX Info: Defining document command \setmathtt
+(LaTeX)  with arg. spec. 'O{}m' on line 289.
+
+ LaTeX Info: Defining document command \newfontfamily
+(LaTeX)  with arg. spec. 'mO{}m' on line 304.
+
+ LaTeX Info: Defining document command \newfontface
+(LaTeX)  with arg. spec. 'mO{}m' on line 307.
+
+ LaTeX Info: Defining document command \defaultfontfeatures
+(LaTeX)  with arg. spec. 'm' on line 308.
+
+ LaTeX Info: Defining document command \addfontfeatures
+(LaTeX)  with arg. spec. 'm' on line 325.
+
+ LaTeX Info: Defining document command \newfontfeature
+(LaTeX)  with arg. spec. 'mm' on line 334.
+
+ LaTeX Info: Defining document command \newAATfeature
+(LaTeX)  with arg. spec. 'mmmm' on line 343.
+
+ LaTeX Info: Defining document command \newICUfeature
+(LaTeX)  with arg. spec. 'mmm' on line 352.
+
+ LaTeX Info: Defining document command \aliasfontfeature
+(LaTeX)  with arg. spec. 'mm' on line 354.
+
+ LaTeX Info: Defining document command \aliasfontfeatureoption
+(LaTeX)  with arg. spec. 'mmm' on line 357.
+
+ LaTeX Info: Defining document command \newfontscript
+(LaTeX)  with arg. spec. 'mm' on line 362.
+
+ LaTeX Info: Defining document command \newfontlanguage
+(LaTeX)  with arg. spec. 'mm' on line 379.
+
+ LaTeX Info: Defining document command \DeclareFontsExtensions
+(LaTeX)  with arg. spec. 'm' on line 395.
+
+
+! Undefined control sequence.
+l.722 \xetex_or_luatex:nnn
+                           { \cs_new:Npn \fontspec_set_font_type: }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing { inserted.
+l.722 ... { \cs_new:Npn \fontspec_set_font_type: }
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+! Undefined control sequence.
+l.725     \ifcase\XeTeXfonttype
+                               \zf@basefont
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.725     \ifcase\XeTeXfonttype\zf@basefont
+                                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \let 
+l.726       \zf@tfmtrue
+                       
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+l.818 \xetex_or_luatex:nnn
+                           { \tl_set:Nn \l_fontspec_pre_feat_tl }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \tl_set:Nn has an extra }.
+<inserted text> 
+                \par 
+l.818 ...nn { \tl_set:Nn \l_fontspec_pre_feat_tl }
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+! Paragraph ended before \tl_set:Nn was complete.
+<to be read again> 
+                   \par 
+l.818 ...nn { \tl_set:Nn \l_fontspec_pre_feat_tl }
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.829     m
+           ode     = \l_fontspec_mode_tl   ;
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.829     mode     = \l_fontspec_mode_tl
+                                           ;
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> script=\l_fontspec_script_tl 
+                                        ;language=\l_fontspec_lang_tl ;
+l.834     }
+           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...pt_tl ;language=\l_fontspec_lang_tl 
+                                                  ;
+l.834     }
+           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1034 \xetex_or_luatex:nnn
+                            {\prg_new_conditional:Nnn \fontspec_check_script...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \prg_generate_conditional_aux:nnNNnnnn has an extra }.
+<inserted text> 
+                \par 
+l.1034 ...ional:Nnn \fontspec_check_script:n {TF}}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+! Paragraph ended before \prg_generate_conditional_aux:nnNNnnnn was complete.
+<to be read again> 
+                   \par 
+l.1034 ...ional:Nnn \fontspec_check_script:n {TF}}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Undefined control sequence.
+l.1037     \@tempcntb\XeTeXOTcountscripts
+                                         \zf@basefont
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1037 ...tempcntb\XeTeXOTcountscripts\zf@basefont
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \let 
+l.1038     \c@zf@index\z@ \@tempswafalse
+                                        
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \let 
+l.1038     \c@zf@index\z@ \@tempswafalse
+                                        
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.1048   }
+          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+)
+! Incomplete \iffalse; all text was ignored after line 1048.
+<inserted text> 
+                \fi 
+l.28 \usepackage
+                {xltxtra}^^M
+The file ended while I was skipping conditional text.
+This kind of error happens when you say `\if...' and forget
+the matching `\fi'. I've inserted a `\fi'; this might work.
+
+(/usr/local/texlive/2010/texmf-dist/tex/xelatex/xltxtra/xltxtra.sty
+Package: xltxtra 2010/06/03 v0.5d Improvements for the "XeLaTeX" format
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+! 
+ ********************************************
+ * XeTeX is required to compile this document.
+ * Sorry!
+ ********************************************.
+\RequireXeTeX ...********************************}
+                                                  \endgroup \fi 
+l.26 \RequireXeTeX
+                  
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+(/usr/local/texlive/2010/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+File: xunicode.sty 2008/02/08 v0.91 provides access to latin accents and many o
+ther characters in Unicode lower plane
+
+
+! LaTeX Error: *** this package currently works only with XeTeX ***
+ You are not using XeTeX, so we are exiting cleanly!
+ Continuing may lead to 'unavailable font metrics' errors!
+.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17 ...csname\relax\expandafter\notXeTeXformat\fi
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+) (/usr/local/texlive/2010/texmf-dist/tex/latex/metalogo/metalogo.sty
+Package: metalogo 2010/05/29 v0.12 Extended TeX logo macros
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+\xl@everylogo=\toks37
+\xl@@everylogo=\toks38
+LaTeX Info: Redefining \TeX on input line 193.
+LaTeX Info: Redefining \LaTeX on input line 202.
+LaTeX Info: Redefining \LaTeXe on input line 219.
+)
+LaTeX Info: Redefining \textsubscript on input line 62.
+LaTeX Info: Redefining \textsuperscript on input line 64.
+\xxt@tempbox=\box27
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup4
+\symboldletters=\mathgroup5
+\symboldsymbols=\mathgroup6
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
+LaTeX Info: Redefining \bm on input line 204.
+)
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> T1/MinionPro-OsF/b/it on input line 3
+5.
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 36.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T1/MinionPro-OsF/b/n on input line 36.
+
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/MinionPro-TOsF/b/it on input line 
+37.
+\c@mv@boldtabular=\count148
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `boldtabular' on input line
+ 39.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `boldtabular
+'
+(Font)                  OT1/cmr/m/n --> T1/MinionPro-OsF/b/n on input line 39.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `boldtabular'
+(Font)                  OML/cmm/m/it --> OML/MinionPro-TOsF/b/it on input line 
+40.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `boldtabular
+'
+(Font)                  OT1/cmr/m/it --> T1/MinionPro-OsF/b/it on input line 41
+.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/hanging/hanging.sty
+Package: hanging 2009/09/02 v1.2b hanging paragraphs and punctuation
+\h@ngcommawd=\skip51
+\h@ngfstopwd=\skip52
+\h@ngquotewd=\skip53
+\h@ngdquotewd=\skip54
+\h@ngquerywd=\skip55
+\h@ngexclwd=\skip56
+\h@ngcolonwd=\skip57
+\h@ngscolonwd=\skip58
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/datetime/datetime.sty
+Package: datetime 2010/02/06 v2.57 Date Time Package
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fmtcount/fmtcount.sty
+Package: fmtcount 2009/10/02 v1.31
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks39
+\ex@=\dimen114
+)
+\c@padzeroesN=\count149
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fmtcount/fc-english.def
+File: fc-english 2007/05/26
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fmtcount/fc-UKenglish.def
+File: fc-UKenglish 2007/06/14
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fmtcount/fc-british.def
+File: fc-british 2007/06/14
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fmtcount/fc-USenglish.def
+File: fc-USenglish 2007/06/14
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fmtcount/fc-spanish.def
+File: fc-spanish.def 2007/05/26
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fmtcount/fc-portuges.def
+File: fc-portuges.def 2007/05/26
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fmtcount/fc-french.def
+File: fc-french.def 2007/05/26
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fmtcount/fc-german.def
+File: fc-german.def 2007/06/14
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fmtcount/fc-italian.def
+File: fc-italian.def 2009/10/02 Italian support for fmtcount (Edoardo Pasca)
+)
+No configuration file fmtcount.cfg found.
+\@DT@modctr=\count150
+\@ordinalctr=\count151
+\@orgargctr=\count152
+\@strctr=\count153
+\@tmpstrctr=\count154
+\@DT@loopN=\count155
+\@DT@X=\count156
+)
+\@day=\count157
+\@month=\count158
+\@year=\count159
+\c@HOUR=\count160
+\c@HOURXII=\count161
+\c@MINUTE=\count162
+\c@TOHOUR=\count163
+\c@TOMINUTE=\count164
+\c@SECOND=\count165
+\currenthour=\count166
+\currentminute=\count167
+\currentsecond=\count168
+Package datetime Info: No datetime.cfg file found, using default settings on in
+put line 292.
+\@dtctr=\count169
+\dayofyear=\count170
+\dayofweek=\count171
+LaTeX Info: Redefining \today on input line 712.
+\dt@a=\toks40
+\dt@b=\toks41
+) (/usr/local/texlive/2010/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2010/06/18 v6.81g Hypertext links for LaTeX
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2010/04/26 v1.7 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2010/03/01 v1.9 Key value parser (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2010/01/28 v1.3 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/pdfescape.sty
+Package: pdfescape 2010/03/01 v1.9 Provides hex, PDF name and string conversion
+s (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2010/04/01 v0.9 Utility functions of pdfTeX for LuaTeX (HO)
+
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+))
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2010/01/28 v2.1 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/hycolor.sty
+Package: hycolor 2009/12/12 v1.6 Color options of hyperref/bookmark (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/xcolor-patch.sty
+Package: xcolor-patch 2009/12/12 xcolor patch
+))
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/letltxmacro.sty
+Package: letltxmacro 2008/06/24 v1.3 Let assignment for LaTeX macros (HO)
+)
+\@linkdim=\dimen115
+\Hy@linkcounter=\count172
+\Hy@pagecounter=\count173
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2010/06/18 v6.81g Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/intcalc.sty
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 3577.
+Package hyperref Info: Option `colorlinks' set `true' on input line 3577.
+Package hyperref Info: Option `breaklinks' set `true' on input line 3577.
+Package hyperref Info: Hyper figures OFF on input line 3658.
+Package hyperref Info: Link nesting OFF on input line 3663.
+Package hyperref Info: Hyper index ON on input line 3666.
+Package hyperref Info: Plain pages OFF on input line 3673.
+Package hyperref Info: Backreferencing OFF on input line 3678.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 3874.
+(/usr/local/texlive/2010/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4159.
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/bitset.sty
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/bigintcalc.sty
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+))
+\Fld@menulength=\count174
+\Field@Width=\dimen116
+\Fld@charsize=\dimen117
+\Field@toks=\toks42
+Package hyperref Info: Hyper figures OFF on input line 5137.
+Package hyperref Info: Link nesting OFF on input line 5142.
+Package hyperref Info: Hyper index ON on input line 5145.
+Package hyperref Info: backreferencing OFF on input line 5152.
+Package hyperref Info: Link coloring ON on input line 5155.
+Package hyperref Info: Link coloring with OCG OFF on input line 5162.
+Package hyperref Info: PDF/A mode OFF on input line 5167.
+LaTeX Info: Redefining \ref on input line 5207.
+LaTeX Info: Redefining \pageref on input line 5211.
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2010/03/25 v1.12 At begin shipout hook (HO)
+)
+\Hy@abspage=\count175
+\c@Item=\count176
+\c@Hfootnote=\count177
+)
+
+Package hyperref Warning: Wrong driver `hdvipdfm.def';
+(hyperref)                pdfTeX is running in PDF mode.
+(hyperref)                Forcing driver `hpdftex.def'.
+
+* hyperref using driver hpdftex *
+(/usr/local/texlive/2010/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2010/06/18 v6.81g Hyperref driver for pdfTeX
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/atveryend.sty
+Package: atveryend 2010/03/24 v1.5 Hooks at very end of document (HO)
+Package atveryend Info: \enddocument detected (standard).
+)
+\Fld@listcount=\count178
+\c@bookmark@seq@number=\count179
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2010/03/16 v1.6 Rerun checks for auxiliary files (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/uniquecounter.sty
+Package: uniquecounter 2009/12/18 v1.1 Provides unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+71.
+)
+\Hy@SectionHShift=\skip59
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2009/11/07 8.31a (PWD, AO)
+\bibhang=\skip60
+\bibsep=\skip61
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count180
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/07/13 v5.5 Page Geometry
+\Gm@cnth=\count181
+\Gm@cntv=\count182
+\c@Gm@tempcnt=\count183
+\Gm@bindingoffset=\dimen118
+\Gm@wd@mp=\dimen119
+\Gm@odd@mp=\dimen120
+\Gm@even@mp=\dimen121
+\Gm@layoutwidth=\dimen122
+\Gm@layoutheight=\dimen123
+\Gm@layouthoffset=\dimen124
+\Gm@layoutvoffset=\dimen125
+\Gm@dimlist=\toks43
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+) (/usr/local/texlive/2010/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2010/01/09 v3.1m Customizing captions (AR)
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
+\captionmargin=\dimen126
+\captionmargin@=\dimen127
+\captionwidth=\dimen128
+\caption@indent=\dimen129
+\caption@parindent=\dimen130
+\caption@hangindent=\dimen131
+)
+\c@ContinuedFloat=\count184
+Package caption Info: hyperref package is loaded.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/tools/dcolumn.sty
+Package: dcolumn 2001/05/28 v1.06 decimal alignment package (DPC)
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen132
+\extrarowheight=\dimen133
+\NC@list=\toks44
+\extratabsurround=\skip62
+\backup@length=\skip63
+))
+! Undefined control sequence.
+\fontspec_init: ...ttimetrue \xetex_or_luatex:nnn 
+                                                  {\cs_set:Npn \fontspec_nam...
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing { inserted.
+\fontspec_init: ...t:Npn \fontspec_namewrap:n ##1}
+                                                  {##1}{name:##1}\tl_clear:N...
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+! You can't use `macro parameter character #' in vertical mode.
+\fontspec_init: ...pn \fontspec_namewrap:n ##1}{##
+                                                  1}{name:##1}\tl_clear:N \l...
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! You can't use `macro parameter character #' in horizontal mode.
+\fontspec_init: ...ec_namewrap:n ##1}{##1}{name:##
+                                                  1}\tl_clear:N \l_fontspec_...
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Font \zf@basefont= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \global 
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \zf@basefont= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \zf@basefont 
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! fontspec Error
+
+(fontspec) The following font options are not recognised:
+(fontspec)     Ligatures={Common}, Mapping={tex-text},BoldFont={* Bold}, Italic
+Font={* Italic}
+
+For immediate help type H <return>.
+ ...                                              
+                                                  
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+There is probably a typo in the font feature selection.
+
+\c@zf@famc@Gentium Book Basic=\count185
+ fontspec Info: Defining font family for 'Gentium Book Basic' with options [Lig
+atures={Common}, Mapping={tex-text},BoldFont={* Bold}, ItalicFont={* Italic}].
+
+! Undefined control sequence.
+<argument> ...@fontname }:\l_fontspec_pre_feat_tl 
+                                                  \l_fontspec_rawfeatures_sc...
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> T@\zf@enc 
+                     
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ...essage  LaTeX Error: Encoding scheme `\zf@enc 
+                                                  ' unknown.
+
+See the LaTeX ...
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: Encoding scheme `' unknown.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Font \@tempfontb= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! fontspec Error
+
+(fontspec) The following font options are not recognised:
+(fontspec)     Ligatures={Common}, Mapping={tex-text},BoldFont={* Bold}, Italic
+Font={* Italic}
+
+For immediate help type H <return>.
+ ...                                              
+                                                  
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+There is probably a typo in the font feature selection.
+
+! Undefined control sequence.
+<argument> ...@fontname }:\l_fontspec_pre_feat_tl 
+                                                  \l_fontspec_rawfeatures_sc...
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package fontspec Info: Defining shape m/n with raw font features:
+(fontspec)             .
+! Undefined control sequence.
+<argument> \exp_not:N \DeclareFontShape {\zf@enc 
+                                                 }{\zf@family }{\mddefault }...
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Font family `+GentiumBookBasic(0)' unknown.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+\zf@make@smallcaps ...\@empty \xetex_or_luatex:nn 
+                                                  {\ifzf@atsui \fontspec_mak...
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\zf@make@smallcaps ...{\fontspec_check_ot_feat:nT 
+                                                  {+smcp}{\edef \zf@smallcap...
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no + in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no p in font nullfont!
+! Font \@tempfonta= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \@tempfontb= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+ fontspec Info: Could not resolve font Gentium Book Basic/B (it probably doesn'
+t exist).
+
+! Font \@tempfonta= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \@tempfontb= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+ fontspec Info: Could not resolve font Gentium Book Basic/I (it probably doesn'
+t exist).
+
+! Undefined control sequence.
+<argument> \l_fontspec_external_bool 
+                                     
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Font \@tempfonta= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \@tempfontb= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+ fontspec Info: Could not resolve font Gentium Book Basic/BI (it probably doesn
+'t exist).
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.145 ...talicFont={* Italic}]{Gentium Book Basic}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Font Info:    Try loading font information for OT1+GentiumBookBasic(0) on
+ input line 145.
+LaTeX Font Info:    No file OT1GentiumBookBasic(0).fd. on input line 145.
+
+LaTeX Font Warning: Font shape `OT1/GentiumBookBasic(0)/m/n' undefined
+(Font)              using `OT1/cmr/m/n' instead on input line 145.
+
+! Undefined control sequence.
+\fontspec_init: ...ttimetrue \xetex_or_luatex:nnn 
+                                                  {\cs_set:Npn \fontspec_nam...
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing { inserted.
+\fontspec_init: ...t:Npn \fontspec_namewrap:n ##1}
+                                                  {##1}{name:##1}\tl_clear:N...
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+\fontspec_init: ...pn \fontspec_namewrap:n ##1}{##
+                                                  1}{name:##1}\tl_clear:N \l...
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+\fontspec_init: ...ec_namewrap:n ##1}{##1}{name:##
+                                                  1}\tl_clear:N \l_fontspec_...
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Font \zf@basefont= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \global 
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \zf@basefont= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \zf@basefont 
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! fontspec Error
+
+(fontspec) The following font options are not recognised:
+(fontspec)     Ligatures={Common}, Mapping={tex-text},Mapping=tex-text,BoldFont
+={Delicious-Bold},ItalicFont={Delicious-Italic},SmallCapsFont={Delicious-SmallC
+aps}
+
+For immediate help type H <return>.
+ ...                                              
+                                                  
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+There is probably a typo in the font feature selection.
+
+\c@zf@famc@Delicious-Roman=\count186
+ fontspec Info: Defining font family for 'Delicious-Roman' with options [Ligatu
+res={Common}, Mapping={tex-text},Mapping=tex-text,BoldFont={Delicious-Bold},Ita
+licFont={Delicious-Italic},SmallCapsFont={Delicious-SmallCaps}].
+
+! Undefined control sequence.
+<argument> ...@fontname }:\l_fontspec_pre_feat_tl 
+                                                  \l_fontspec_rawfeatures_sc...
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> T@\zf@enc 
+                     
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ...essage  LaTeX Error: Encoding scheme `\zf@enc 
+                                                  ' unknown.
+
+See the LaTeX ...
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: Encoding scheme `' unknown.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Font \@tempfontb= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! fontspec Error
+
+(fontspec) The following font options are not recognised:
+(fontspec)     Ligatures={Common}, Mapping={tex-text},Mapping=tex-text,BoldFont
+={Delicious-Bold},ItalicFont={Delicious-Italic},SmallCapsFont={Delicious-SmallC
+aps}
+
+For immediate help type H <return>.
+ ...                                              
+                                                  
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+There is probably a typo in the font feature selection.
+
+! Undefined control sequence.
+<argument> ...@fontname }:\l_fontspec_pre_feat_tl 
+                                                  \l_fontspec_rawfeatures_sc...
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package fontspec Info: Defining shape m/n with raw font features:
+(fontspec)             .
+! Undefined control sequence.
+<argument> \exp_not:N \DeclareFontShape {\zf@enc 
+                                                 }{\zf@family }{\mddefault }...
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Font family `+Delicious-Roman(0)' unknown.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+\zf@make@smallcaps ...\@empty \xetex_or_luatex:nn 
+                                                  {\ifzf@atsui \fontspec_mak...
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\zf@make@smallcaps ...{\fontspec_check_ot_feat:nT 
+                                                  {+smcp}{\edef \zf@smallcap...
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no + in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no p in font nullfont!
+! Font \@tempfonta= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \@tempfontb= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+ fontspec Info: Could not resolve font Delicious-Roman/B (it probably doesn't e
+xist).
+
+! Font \@tempfonta= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \@tempfontb= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+ fontspec Info: Could not resolve font Delicious-Roman/I (it probably doesn't e
+xist).
+
+! Undefined control sequence.
+<argument> \l_fontspec_external_bool 
+                                     
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Font \@tempfonta= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \@tempfontb= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+ fontspec Info: Could not resolve font Delicious-Roman/BI (it probably doesn't 
+exist).
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.147 ...={Delicious-SmallCaps}] {Delicious-Roman}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Undefined control sequence.
+\fontspec_init: ...ttimetrue \xetex_or_luatex:nnn 
+                                                  {\cs_set:Npn \fontspec_nam...
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing { inserted.
+\fontspec_init: ...t:Npn \fontspec_namewrap:n ##1}
+                                                  {##1}{name:##1}\tl_clear:N...
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+\fontspec_init: ...pn \fontspec_namewrap:n ##1}{##
+                                                  1}{name:##1}\tl_clear:N \l...
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+\fontspec_init: ...ec_namewrap:n ##1}{##1}{name:##
+                                                  1}\tl_clear:N \l_fontspec_...
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Font \zf@basefont= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \global 
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \zf@basefont= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \zf@basefont 
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! fontspec Error
+
+(fontspec) The following font options are not recognised:
+(fontspec)     Ligatures={Common}, Mapping={tex-text},Scale=0.8
+
+For immediate help type H <return>.
+ ...                                              
+                                                  
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+There is probably a typo in the font feature selection.
+
+\c@zf@famc@Monaco=\count187
+ fontspec Info: Defining font family for 'Monaco' with options [Ligatures={Comm
+on}, Mapping={tex-text},Scale=0.8].
+
+! Undefined control sequence.
+<argument> ...@fontname }:\l_fontspec_pre_feat_tl 
+                                                  \l_fontspec_rawfeatures_sc...
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> T@\zf@enc 
+                     
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ...essage  LaTeX Error: Encoding scheme `\zf@enc 
+                                                  ' unknown.
+
+See the LaTeX ...
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: Encoding scheme `' unknown.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Font \@tempfontb= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! fontspec Error
+
+(fontspec) The following font options are not recognised:
+(fontspec)     Ligatures={Common}, Mapping={tex-text},Scale=0.8
+
+For immediate help type H <return>.
+ ...                                              
+                                                  
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+There is probably a typo in the font feature selection.
+
+! Undefined control sequence.
+<argument> ...@fontname }:\l_fontspec_pre_feat_tl 
+                                                  \l_fontspec_rawfeatures_sc...
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package fontspec Info: Defining shape m/n with raw font features:
+(fontspec)             .
+! Undefined control sequence.
+<argument> \exp_not:N \DeclareFontShape {\zf@enc 
+                                                 }{\zf@family }{\mddefault }...
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Font family `+Monaco(0)' unknown.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+\zf@make@smallcaps ...\@empty \xetex_or_luatex:nn 
+                                                  {\ifzf@atsui \fontspec_mak...
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\zf@make@smallcaps ...{\fontspec_check_ot_feat:nT 
+                                                  {+smcp}{\edef \zf@smallcap...
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no + in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no p in font nullfont!
+! Font \@tempfonta= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \@tempfontb= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+ fontspec Info: Could not resolve font Monaco/B (it probably doesn't exist).
+
+! Font \@tempfonta= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \@tempfontb= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+ fontspec Info: Could not resolve font Monaco/I (it probably doesn't exist).
+
+! Undefined control sequence.
+<argument> \l_fontspec_external_bool 
+                                     
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Font \@tempfonta= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \@tempfontb= at 12.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   \edef 
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+ fontspec Info: Could not resolve font Monaco/BI (it probably doesn't exist).
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.148 \setmonofont[Scale=0.8]{Monaco}
+                                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box28
+\UL@hyphenbox=\box29
+\UL@skip=\skip64
+\UL@hook=\toks45
+\UL@pe=\count188
+\UL@pixel=\dimen134
+\ULC@box=\box30
+Package: ulem 2010/01/21
+\ULdepth=\dimen135
+)
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Sweave.sty
+Package: Sweave 
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count189
+\FV@InFile=\read1
+\FV@TabBox=\box31
+\c@FancyVerbLine=\count190
+\FV@StepNumber=\count191
+\FV@OutFile=\write3
+)
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/upquote.sty
+Package: upquote 2003/08/11 v1.1 Covington's upright-quote modification to verb
+atim and verb
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+))
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)
+LaTeX Font Info:    Try loading font information for T1+GentiumBookBasic(0) on 
+input line 100.
+LaTeX Font Info:    No file T1GentiumBookBasic(0).fd. on input line 100.
+
+
+LaTeX Font Warning: Font shape `T1/GentiumBookBasic(0)/m/n' undefined
+(Font)              using `T1/cmr/m/n' instead on input line 100.
+
+) (/usr/local/texlive/2010/texmf-dist/tex/latex/ae/ae.sty
+Package: ae 2001/02/12 1.3 Almost European Computer Modern
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/ae/t1aer.fd
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+))))
+(./sweaveTemplate.aux)
+\openout1 = `sweaveTemplate.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 181.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 181.
+
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 181.
+
+(/usr/local/texlive/2010/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count192
+\scratchdimen=\dimen136
+\scratchbox=\box32
+\nofMPsegments=\count193
+\nofMParguments=\count194
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count195
+\MPscratchDim=\dimen137
+\MPnumerator=\count196
+\everyMPtoPDFconversion=\toks47
+) (/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 436.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box33
+Package hyperref Info: Link coloring ON on input line 181.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/refcount.sty
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
+)
+\c@section@level=\count197
+)
+LaTeX Info: Redefining \ref on input line 181.
+LaTeX Info: Redefining \pageref on input line 181.
+LaTeX Info: Redefining \nameref on input line 181.
+
+(./sweaveTemplate.out) (./sweaveTemplate.out)
+\@outlinefile=\write4
+\openout4 = `sweaveTemplate.out'.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.27pt, 469.75499pt, 72.27pt)
+* v-part:(T,H,B)=(86.724pt, 578.15999pt, 130.086pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75499pt
+* \textheight=578.15999pt
+* \oddsidemargin=0.00002pt
+* \evensidemargin=0.00002pt
+* \topmargin=-22.54599pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=11.74988pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+(./sweaveTemplate-concordance.tex)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 220.
+ [1
+
+{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+!pdfTeX error: /usr/texbin/pdflatex (file /usr/local/texlive/2010/texmf-var/fon
+ts/map/pdftex/updmap/pdftex.map): fflush() failed (Broken pipe)
+ ==> Fatal error occurred, no output PDF file produced!

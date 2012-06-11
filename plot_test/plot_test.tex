@@ -1,8 +1,44 @@
 \documentclass{article}
+\usepackage{setspace} 
+\usepackage{graphicx}
+\addtolength{\topmargin}{-.575in}
+\addtolength{\textheight}{1.25in}
+
 
 \usepackage{Sweave}
 \begin{document}
 \input{plot_test-concordance}
+\begin{titlepage}
+\begin{center}
+
+{ \Large \bfseries The Case for Effective Fire Suppression in Ontario}\\[4cm] \vfill
+A dissertation submitted in partial fulfilment of the requirements for the Master of Science Degree in Evironmental Sustainability \& Green Technology, Keele University. \vfill
+Craig Robert Shenton\\
+(Supervisor: Dr Peter Thomas)\\[.5cm]
+
+\textbf{03 September 2012}\\[.5cm]
+
+Word Count: 15000
+
+\end{center}
+\end{titlepage}
+
+\begin{spacing}{1.5}
+\phantom
+\phantom
+\section*{Chapter 1 \\ \huge{Introduction}}
+\phantom
+\phantom
+The boreal forest of Canada are one of the world's largest stores of carbon, provide a vast array of ecosystem services, and are home to valuable biological diversity. The forest have also played a prominent role in Canada's social and economic development (Drushka, 2003). It is therefore, no wonder that public fire management agencies expend great deal of effort and resources fighting the seasonal wildfires that threaten this valuable resource (Martell 2001). In the fire management literature, it has long been assumed that these fire suppression efforts are effective (Cumming 2005:772). However, in recent years, fire ecologists have begun to question the received wisdom (Miyanishi {\it et al}. 2002). \\
+
+The case for effective fire suppression rests on a number of retrospective comparisons between forest regions in Ontario, Canada (Stocks 1991, Ward and Tithecott 1993; Martell 1994; Ward {\it et al.} 2001). These studies compared the size distributions of forest fires in areas with and without aggressive fire suppression policies, in order to measure the effectiveness of fire suppression at reducing the annual area of forest burned (Cumming 2005:772-773). The results revealed a highly right-skewed distribution in areas with aggressive fire suppression and a relatively flat distribution in areas without such policies. The authors concluded that fire suppression had been successful at reducing the annual area burned over recent decades (Bridge {\it et al.} 2005:43). \\
+
+However, Miyanishi {\it et al.} (2002; also see Johnson {\it et al.} 2001; Miyanishi and Johnson 2001) argue that these studies failed to control for various spatial and temporal factors, (e.g. the underlying fire-size distributions, the fire-detection efficiency and the probability that small fires are recorded), which have been shown to distort the results of similar studies, and on that basis should be considered unsound. \\
+
+While both parties agree that fire suppression is primarily intended to reduce the annual area of forest burned, neither have been able to established a workable definition of fire suppression 'effectiveness' (Cumming 2005:781). Cumming (2005:773) has argued that a definition of 'effectiveness' only requires that annual burn rates with aggressive fire suppression be lower than they would have been without it. \\
+
+\end{spacing}
+\clearpage
 
 \section*{plot test}
 
@@ -26,12 +62,12 @@ Figure~\ref{fig:one} (p.~\pageref{fig:one})
 is produced by the following code
 \begin{Schunk}
 \begin{Sinput}
-> plot(x, y)
+> plot(x, y, width=2, height=2)
 > abline(out1)
 \end{Sinput}
 \end{Schunk}
 
-\begin{figure}[h!]
+\begin{figure}[!h]
   \centering
 \includegraphics{plot_test-fig1}
 
@@ -41,6 +77,5 @@ is produced by the following code
 Note that \verb@x@, \verb@y@, and \verb@out1@ are remembered from
 the preceding code chunk.  We don't have to regenerate them.
 All code chunks are part of one R ``session''.
-
 
 \end{document}
