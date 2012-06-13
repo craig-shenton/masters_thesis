@@ -1,0 +1,31 @@
+Calculations
+========================================================
+
+Calculating the area burned per year & the number of arrivals (i.e., new fires) per year
+
+```{r}
+omnr <- read.csv("OMNR_data.csv", header=TRUE)
+
+# create subset omnr.clean == only fires in the Intensive and Measured Zones & caused by Lightening
+omnr.clean <- subset(omnr, subset = (omnr$FIRE_MGT_ZONE == "MEA" | omnr$FIRE_MGT_ZONE == "INT") & omnr$GENERAL_CAUSE == "LTG")
+
+# area burned per year
+At <- aggregate(omnr.clean$FINAL_SIZE, by=list(omnr.clean$FIRE_YEAR),sum)
+
+# rename columns
+names(At) <- c("Year", "Area (ha)")
+
+At
+
+# number of arivals per year
+Nt <- aggregate(omnr.clean$FINAL_SIZE, by=list(omnr.clean$FIRE_YEAR),length)
+
+# rename columns
+names(Nt) <- c("Year", "Arrivals")
+
+Nt
+```
+
+```{r}
+print(sessionInfo(), locale = FALSE)
+```
