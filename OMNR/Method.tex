@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage{setspace} 
+\usepackage{graphicx}
+\addtolength{\topmargin}{-.575in}
+\addtolength{\textheight}{1.25in}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\usepackage{Sweave}
+\begin{document}
+\input{Method-concordance}
+
+\begin{spacing}{1.5}
+\phantom
+\phantom
+\phantom
+\phantom
+\section*{Chapter 4 \\ \huge{Methodology}}
+\phantom
+\phantom
+\subsection*{4.2 Statistical Methods}
+
+From provincial fire management records in the Ontario Ministry of Natural Resources (OMNR) fire database the following annual statistics will be calculated:\\
+
+\begin{tabular}{ll}
+$E_{\mathrm{t}}$     & the annual number of escapes (i.e., fires  $\geq$3 {\it ha})\\
+$L_{\mathrm{t}}$     & the annual number of large fires (i.e., fires $\geq$200 {\it ha})\\
+\end{tabular}\\
+
+\noindent As Cumming (2005:775) suggests, the observed annual distribution of fires ($L_{\mathrm{t}}$ / $E_{\mathrm{t}}$) will be used as an estimate of the annual probability ($\rho{\mathrm{t}}$) that a randomly chosen escaped fire ($E$) will fail to be suppressed and become a large fire ($L$). \\
+
+Conditional on $E_{\mathrm{t}}$ (i.e., the annual number of escapes), $L_{\mathrm{t}}$ (i.e., the annual number of large fires) will, therefore, be a {\it binomial random variable} with an expected value of $L_{\mathrm{t}}$ $\rho{\mathrm{t}}$ and variance $L_{\mathrm{t}}$ $\rho{\mathrm{t}}$ (1 $-$ $\rho{\mathrm{t}}$). As such, the hypotheses $H_{\mathrm{0}}$ and $H_{\mathrm{S}}$ can be operationalised as logistic regression models of the annual variation in $\rho{\mathrm{t}}$, and tested by regressing the observations against the suppression strategy ($S_{\mathrm{i}}$ or $S_{\mathrm{m}}$) being employed. \\
+
+
+\noindent With the OMNR dataset .csv file downloaded to the working directory, the file was loaded into R.
+
+
+\noindent To calculate $N_{\mathrm{t}}$ the annual load, the total number of fires per year were aggregated.
+
+
+\noindent The OMNR dataset was then split into the two Fire Management Zones, Inensive and Measured, reqired for the analysis.
+
+
+\noindent The OMNR dataset was further seperated into the number of suppressed and escaped fires in each Fire Management Zone.
+
+
+\noindent $N_{\mathrm{s}}$ and $N_{\mathrm{e}}$ could then aggregated.
+
+
+
+\begin{Schunk}
+\begin{Sinput}
+> omnr.glm <- data.frame(zone=rep(c("mea","int"),c(16,16)),year=rep(1989:2004,2),suppressed=c(49,10,52,28,5,34,58,33,21,23,12,6,6,11,10,1,137,83,12,79,42,93,199,89,73,150,83,57,101,38,77,16),unsuppressed=c(7,0,14,2,2,4,26,27,6,4,6,0,2,6,6,0,7,5,8,7,1,1,27,54,5,15,12,1,0,10,10,1),load=c(2429,1614,2559,960,743,1053,2122,1245,1634,2278,1017,644,1561,1138,1036,428,2429,1614,2559,960,743,1053,2122,1245,1634,2278,1017,644,1561,1138,1036,428))
+\end{Sinput}
+\end{Schunk}
+
+\begin{Schunk}
+\begin{Soutput}
+Call:
+glm(formula = glm.eq, family = binomial(logit), data = omnr.glm)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-8.3516  -0.3858   0.6594   1.8976   5.0376  
+
+Coefficients:
+                                Estimate Std. Error z value Pr(>|z|)
+(Intercept)                     35.03499   40.31208   0.869   0.3848
+omnr.glm$zonemea               146.85587   70.22388   2.091   0.0365
+omnr.glm$year                   -0.01650    0.02019  -0.817   0.4138
+omnr.glm$zonemea:omnr.glm$year  -0.07409    0.03519  -2.105   0.0353
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 238.46  on 31  degrees of freedom
+Residual deviance: 183.76  on 28  degrees of freedom
+AIC: 288.11
+
+Number of Fisher Scoring iterations: 5
+\end{Soutput}
+\end{Schunk}
+
+\begin{center}
+% latex table generated in R 2.15.0 by xtable 1.7-0 package
+% Mon Jul 23 16:08:40 2012
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & z value & Pr($>$$|$z$|$) \\ 
+  \hline
+(Intercept) & 35.0350 & 40.3121 & 0.87 & 0.3848 \\ 
+  omnr.glm\$zonemea & 146.8559 & 70.2239 & 2.09 & 0.0365 \\ 
+  omnr.glm\$year & -0.0165 & 0.0202 & -0.82 & 0.4138 \\ 
+  omnr.glm\$zonemea:omnr.glm\$year & -0.0741 & 0.0352 & -2.11 & 0.0353 \\ 
+   \hline
+\end{tabular}
+\caption{Summary statistics for the regression model}
+\label{tab:summary}
+\end{center}
+\end{table}      \end{center}
+
+\end{spacing}
+\end{document}

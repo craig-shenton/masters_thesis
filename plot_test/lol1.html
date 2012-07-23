@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<title>Year = not significant</title>
+<title></title>
 
 <base target="_blank"/>
 
@@ -180,130 +180,15 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<h1>Year = not significant</h1>
-
-<pre><code class="r">omnr.glm &lt;- data.frame(zone = rep(c(&quot;mea&quot;, &quot;int&quot;), c(16, 16)), year = rep(1989:2004, 
-    2), suppressed = c(49, 10, 52, 28, 5, 34, 58, 33, 21, 23, 12, 6, 6, 11, 
-    10, 1, 137, 83, 12, 79, 42, 93, 199, 89, 73, 150, 83, 57, 101, 38, 77, 16), 
-    unsuppressed = c(7, 0, 14, 2, 2, 4, 26, 27, 6, 4, 6, 0, 2, 6, 6, 0, 7, 5, 
-        8, 7, 1, 1, 27, 54, 5, 15, 12, 1, 0, 10, 10, 1), load = c(2429, 1614, 
-        2559, 960, 743, 1053, 2122, 1245, 1634, 2278, 1017, 644, 1561, 1138, 
-        1036, 428, 2429, 1614, 2559, 960, 743, 1053, 2122, 1245, 1634, 2278, 
-        1017, 644, 1561, 1138, 1036, 428))
+<pre><code class="r">x &lt;- c(1, 2, 3, 4, 5)
+y &lt;- c(1.1, 2.3, 3, 3.9, 5.1)
+ucl &lt;- c(1.3, 2.4, 3.5, 4.1, 5.3)
+lcl &lt;- c(0.9, 1.8, 2.7, 3.8, 5)
+plot(x, y, ylim = range(c(lcl, ucl)))
+arrows(x, ucl, x, lcl, length = 0.05, angle = 90, code = 3)
 </code></pre>
 
-<pre><code class="r">show(omnr.glm)
-</code></pre>
-
-<pre><code>##    zone year suppressed unsuppressed load
-## 1   mea 1989         49            7 2429
-## 2   mea 1990         10            0 1614
-## 3   mea 1991         52           14 2559
-## 4   mea 1992         28            2  960
-## 5   mea 1993          5            2  743
-## 6   mea 1994         34            4 1053
-## 7   mea 1995         58           26 2122
-## 8   mea 1996         33           27 1245
-## 9   mea 1997         21            6 1634
-## 10  mea 1998         23            4 2278
-## 11  mea 1999         12            6 1017
-## 12  mea 2000          6            0  644
-## 13  mea 2001          6            2 1561
-## 14  mea 2002         11            6 1138
-## 15  mea 2003         10            6 1036
-## 16  mea 2004          1            0  428
-## 17  int 1989        137            7 2429
-## 18  int 1990         83            5 1614
-## 19  int 1991         12            8 2559
-## 20  int 1992         79            7  960
-## 21  int 1993         42            1  743
-## 22  int 1994         93            1 1053
-## 23  int 1995        199           27 2122
-## 24  int 1996         89           54 1245
-## 25  int 1997         73            5 1634
-## 26  int 1998        150           15 2278
-## 27  int 1999         83           12 1017
-## 28  int 2000         57            1  644
-## 29  int 2001        101            0 1561
-## 30  int 2002         38           10 1138
-## 31  int 2003         77           10 1036
-## 32  int 2004         16            1  428
-</code></pre>
-
-<pre><code class="r">glm.eq &lt;- &quot;cbind(suppressed, unsuppressed) ~ zone * load&quot;
-
-glm.out &lt;- glm(glm.eq, family = binomial(logit), data = omnr.glm)
-</code></pre>
-
-<pre><code class="r">summary(glm.out)
-</code></pre>
-
-<pre><code>## 
-## Call:
-## glm(formula = glm.eq, family = binomial(logit), data = omnr.glm)
-## 
-## Deviance Residuals: 
-##    Min      1Q  Median      3Q     Max  
-## -8.244  -0.646   0.712   2.034   4.850  
-## 
-## Coefficients:
-##               Estimate Std. Error z value Pr(&gt;|z|)    
-## (Intercept)   1.985401   0.235853    8.42   &lt;2e-16 ***
-## zonemea      -1.118996   0.395935   -2.83   0.0047 ** 
-## load          0.000068   0.000141    0.48   0.6303    
-## zonemea:load  0.000104   0.000224    0.46   0.6424    
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1 
-## 
-## (Dispersion parameter for binomial family taken to be 1)
-## 
-##     Null deviance: 238.46  on 31  degrees of freedom
-## Residual deviance: 193.22  on 28  degrees of freedom
-## AIC: 297.6
-## 
-## Number of Fisher Scoring iterations: 5
-## 
-</code></pre>
-
-<pre><code class="r">
-anova(glm.out, test = &quot;Chisq&quot;)
-</code></pre>
-
-<pre><code>## Analysis of Deviance Table
-## 
-## Model: binomial, link: logit
-## 
-## Response: cbind(suppressed, unsuppressed)
-## 
-## Terms added sequentially (first to last)
-## 
-## 
-##           Df Deviance Resid. Df Resid. Dev Pr(&gt;Chi)    
-## NULL                         31        238             
-## zone       1     44.0        30        194  3.2e-11 ***
-## load       1      1.0        29        193     0.32    
-## zone:load  1      0.2        28        193     0.64    
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1 
-</code></pre>
-
-<pre><code class="r">print(sessionInfo(), locale = FALSE)
-</code></pre>
-
-<pre><code>## R version 2.15.0 (2012-03-30)
-## Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
-## 
-## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
-## 
-## other attached packages:
-## [1] knitr_0.5
-## 
-## loaded via a namespace (and not attached):
-##  [1] Rcpp_0.9.10     codetools_0.2-8 digest_0.5.2    evaluate_0.4.2 
-##  [5] formatR_0.4     highlight_0.3.1 parser_0.0-14   plyr_1.7.1     
-##  [9] stringr_0.6     tools_2.15.0   
-</code></pre>
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-1"/> </p>
 
 </body>
 

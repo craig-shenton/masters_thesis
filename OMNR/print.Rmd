@@ -17,6 +17,8 @@ omnr.3W <- subset(omnr.clean, subset = (omnr.clean$LATITUDE>=48 & omnr.clean$LAT
 
 omnr.3S <- subset(omnr.clean, subset = (omnr.clean$LATITUDE>=51 & omnr.clean$LATITUDE<=53) & (omnr.clean$LONGITUDE<=-88 & omnr.clean$LONGITUDE>=-96))
 
+omnr.4S <- subset(omnr.clean, subset = (omnr.clean$LATITUDE>=48 & omnr.clean$LATITUDE<=51) & (omnr.clean$LONGITUDE<=-92 & omnr.clean$LONGITUDE>=-96))
+
 ## Calculate number of suppressed and unsupressed fires in both Mesured and Intensive zones, per ecoregion.
 
 ## Ecoregion 3W
@@ -73,6 +75,24 @@ omnr.3S.int.s <- subset(omnr.3S, subset = (omnr.3S$FIRE_MGT_ZONE=="INT" & omnr.3
 
 omnr.3S.int.e <- subset(omnr.3S, subset = (omnr.3S$FIRE_MGT_ZONE=="INT" & omnr.3S$FINAL_SIZE>200))
 
+## Ecoregion 4S
+
+# Number of suppressed fires in ecoregion 4S, Measured zone.
+
+omnr.4S.mea.s <- subset(omnr.4S, subset = (omnr.4S$FIRE_MGT_ZONE=="MEA" & omnr.4S$FINAL_SIZE>3 & omnr.4S$FINAL_SIZE<200))
+
+# Number of unsuppressed fires in ecoregion 4S, Measured zone.
+
+omnr.4S.mea.e <- subset(omnr.4S, subset = (omnr.4S$FIRE_MGT_ZONE=="MEA" & omnr.4S$FINAL_SIZE>200))
+
+# Number of suppressed fires in ecoregion 4S, Intensive zone.
+
+omnr.4S.int.s <- subset(omnr.4S, subset = (omnr.4S$FIRE_MGT_ZONE=="INT" & omnr.4S$FINAL_SIZE>3 & omnr.4S$FINAL_SIZE<200))
+
+# Number of unsuppressed fires in ecoregion 4S, Intensive zone.
+
+omnr.4S.int.e <- subset(omnr.4S, subset = (omnr.4S$FIRE_MGT_ZONE=="INT" & omnr.4S$FINAL_SIZE>200))
+
 ## Calculate values for Ne an Ns
 
 # Ecoregion 3W
@@ -95,7 +115,7 @@ omnr.3E.int.Ne <- aggregate(omnr.3E.int.e$FINAL_SIZE ~ omnr.3E.int.e$FIRE_YEAR, 
 
 omnr.3E.int.Ns <- aggregate(omnr.3E.int.s$FINAL_SIZE ~ omnr.3E.int.s$FIRE_YEAR, data=omnr.3E.int.s, FUN=length)
 
-# Ecoregion 3W
+# Ecoregion 3S
 
 omnr.3S.mea.Ne <- aggregate(omnr.3S.mea.e$FINAL_SIZE ~ omnr.3S.mea.e$FIRE_YEAR, data=omnr.3S.mea.e, FUN=length)
 
@@ -104,6 +124,16 @@ omnr.3S.mea.Ns <- aggregate(omnr.3S.mea.s$FINAL_SIZE ~ omnr.3S.mea.s$FIRE_YEAR, 
 omnr.3S.int.Ne <- aggregate(omnr.3S.int.e$FINAL_SIZE ~ omnr.3S.int.e$FIRE_YEAR, data=omnr.3S.int.e, FUN=length)
 
 omnr.3S.int.Ns <- aggregate(omnr.3S.int.s$FINAL_SIZE ~ omnr.3S.int.s$FIRE_YEAR, data=omnr.3S.int.s, FUN=length)
+
+# Ecoregion 4S
+
+omnr.4S.mea.Ne <- aggregate(omnr.4S.mea.e$FINAL_SIZE ~ omnr.4S.mea.e$FIRE_YEAR, data=omnr.4S.mea.e, FUN=length)
+
+omnr.4S.mea.Ns <- aggregate(omnr.4S.mea.s$FINAL_SIZE ~ omnr.4S.mea.s$FIRE_YEAR, data=omnr.4S.mea.s, FUN=length)
+
+omnr.4S.int.Ne <- aggregate(omnr.4S.int.e$FINAL_SIZE ~ omnr.4S.int.e$FIRE_YEAR, data=omnr.4S.int.e, FUN=length)
+
+omnr.4S.int.Ns <- aggregate(omnr.4S.int.s$FINAL_SIZE ~ omnr.4S.int.s$FIRE_YEAR, data=omnr.4S.int.s, FUN=length)
 
 ```
 
@@ -144,4 +174,17 @@ show(omnr.3S.int.Ne)
 ```
 ```{r}
 show(omnr.3S.int.Ns)
+```
+
+```{r}
+show(omnr.4S.mea.Ne)
+```
+```{r}
+show(omnr.4S.mea.Ns)
+```
+```{r}
+show(omnr.4S.int.Ne)
+```
+```{r}
+show(omnr.4S.int.Ns)
 ```

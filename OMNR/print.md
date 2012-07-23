@@ -26,6 +26,10 @@ omnr.3S <- subset(omnr.clean, subset = (omnr.clean$LATITUDE >= 51 &
     omnr.clean$LATITUDE <= 53) & (omnr.clean$LONGITUDE <= -88 & omnr.clean$LONGITUDE >= 
     -96))
 
+omnr.4S <- subset(omnr.clean, subset = (omnr.clean$LATITUDE >= 48 & 
+    omnr.clean$LATITUDE <= 51) & (omnr.clean$LONGITUDE <= -92 & omnr.clean$LONGITUDE >= 
+    -96))
+
 ## Calculate number of suppressed and unsupressed fires in both Mesured
 ## and Intensive zones, per ecoregion.
 
@@ -95,6 +99,28 @@ omnr.3S.int.s <- subset(omnr.3S, subset = (omnr.3S$FIRE_MGT_ZONE ==
 omnr.3S.int.e <- subset(omnr.3S, subset = (omnr.3S$FIRE_MGT_ZONE == 
     "INT" & omnr.3S$FINAL_SIZE > 200))
 
+## Ecoregion 4S
+
+# Number of suppressed fires in ecoregion 4S, Measured zone.
+
+omnr.4S.mea.s <- subset(omnr.4S, subset = (omnr.4S$FIRE_MGT_ZONE == 
+    "MEA" & omnr.4S$FINAL_SIZE > 3 & omnr.4S$FINAL_SIZE < 200))
+
+# Number of unsuppressed fires in ecoregion 4S, Measured zone.
+
+omnr.4S.mea.e <- subset(omnr.4S, subset = (omnr.4S$FIRE_MGT_ZONE == 
+    "MEA" & omnr.4S$FINAL_SIZE > 200))
+
+# Number of suppressed fires in ecoregion 4S, Intensive zone.
+
+omnr.4S.int.s <- subset(omnr.4S, subset = (omnr.4S$FIRE_MGT_ZONE == 
+    "INT" & omnr.4S$FINAL_SIZE > 3 & omnr.4S$FINAL_SIZE < 200))
+
+# Number of unsuppressed fires in ecoregion 4S, Intensive zone.
+
+omnr.4S.int.e <- subset(omnr.4S, subset = (omnr.4S$FIRE_MGT_ZONE == 
+    "INT" & omnr.4S$FINAL_SIZE > 200))
+
 ## Calculate values for Ne an Ns
 
 # Ecoregion 3W
@@ -125,7 +151,7 @@ omnr.3E.int.Ne <- aggregate(omnr.3E.int.e$FINAL_SIZE ~ omnr.3E.int.e$FIRE_YEAR,
 omnr.3E.int.Ns <- aggregate(omnr.3E.int.s$FINAL_SIZE ~ omnr.3E.int.s$FIRE_YEAR, 
     data = omnr.3E.int.s, FUN = length)
 
-# Ecoregion 3W
+# Ecoregion 3S
 
 omnr.3S.mea.Ne <- aggregate(omnr.3S.mea.e$FINAL_SIZE ~ omnr.3S.mea.e$FIRE_YEAR, 
     data = omnr.3S.mea.e, FUN = length)
@@ -138,6 +164,20 @@ omnr.3S.int.Ne <- aggregate(omnr.3S.int.e$FINAL_SIZE ~ omnr.3S.int.e$FIRE_YEAR,
 
 omnr.3S.int.Ns <- aggregate(omnr.3S.int.s$FINAL_SIZE ~ omnr.3S.int.s$FIRE_YEAR, 
     data = omnr.3S.int.s, FUN = length)
+
+# Ecoregion 4S
+
+omnr.4S.mea.Ne <- aggregate(omnr.4S.mea.e$FINAL_SIZE ~ omnr.4S.mea.e$FIRE_YEAR, 
+    data = omnr.4S.mea.e, FUN = length)
+
+omnr.4S.mea.Ns <- aggregate(omnr.4S.mea.s$FINAL_SIZE ~ omnr.4S.mea.s$FIRE_YEAR, 
+    data = omnr.4S.mea.s, FUN = length)
+
+omnr.4S.int.Ne <- aggregate(omnr.4S.int.e$FINAL_SIZE ~ omnr.4S.int.e$FIRE_YEAR, 
+    data = omnr.4S.int.e, FUN = length)
+
+omnr.4S.int.Ns <- aggregate(omnr.4S.int.s$FINAL_SIZE ~ omnr.4S.int.s$FIRE_YEAR, 
+    data = omnr.4S.int.s, FUN = length)
 ```
 
 
@@ -436,6 +476,93 @@ show(omnr.3S.int.Ns)
 ## 12                    2002                        3
 ## 13                    2003                        8
 ## 14                    2004                        1
+```
+
+
+
+
+
+
+```r
+show(omnr.4S.mea.Ne)
+```
+
+
+
+```
+##   omnr.4S.mea.e$FIRE_YEAR omnr.4S.mea.e$FINAL_SIZE
+## 1                    1995                        1
+```
+
+
+
+
+
+```r
+show(omnr.4S.mea.Ns)
+```
+
+
+
+```
+##   omnr.4S.mea.s$FIRE_YEAR omnr.4S.mea.s$FINAL_SIZE
+## 1                    1994                        1
+## 2                    1995                        5
+## 3                    1999                        1
+```
+
+
+
+
+
+```r
+show(omnr.4S.int.Ne)
+```
+
+
+
+```
+##    omnr.4S.int.e$FIRE_YEAR omnr.4S.int.e$FINAL_SIZE
+## 1                     1989                        2
+## 2                     1990                        1
+## 3                     1993                        1
+## 4                     1995                        6
+## 5                     1998                        1
+## 6                     1999                        2
+## 7                     2000                        1
+## 8                     2002                        1
+## 9                     2003                        1
+## 10                    2004                        1
+```
+
+
+
+
+
+```r
+show(omnr.4S.int.Ns)
+```
+
+
+
+```
+##    omnr.4S.int.s$FIRE_YEAR omnr.4S.int.s$FINAL_SIZE
+## 1                     1989                       11
+## 2                     1990                       18
+## 3                     1991                       21
+## 4                     1992                        5
+## 5                     1993                        8
+## 6                     1994                       11
+## 7                     1995                       54
+## 8                     1996                        6
+## 9                     1997                        4
+## 10                    1998                       21
+## 11                    1999                        9
+## 12                    2000                        6
+## 13                    2001                        8
+## 14                    2002                        9
+## 15                    2003                       32
+## 16                    2004                        2
 ```
 
 

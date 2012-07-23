@@ -2,6 +2,10 @@
 # load OMNR datase
 omnr <- read.csv("~/Dropbox/Masters/m_thesis/OMNR/OMNR_data.csv")
 
+load <- aggregate(omnr$FINAL_SIZE, by=list(omnr$FIRE_YEAR),length)
+
+names(load) <- c("Year", "Nt")
+
 omnr.mea <- subset(omnr, subset = omnr$FIRE_MGT_ZONE == "MEA")
 
 omnr.int <- subset(omnr, subset = omnr$FIRE_MGT_ZONE == "INT")
