@@ -1,0 +1,37 @@
+```{r}
+
+title(main="Notched Boxplots", xlab="Group", font.main=4, font.lab=1)
+
+## An example showing how to fill between curves.
+
+par(bg="white")
+
+n <- 100
+
+y <- c(0.83,0.77,0.74)
+
+x <- c("3e","3w","3s")
+
+xx <- c(0:n, n:0)
+
+yy <- c(x, rev(y))
+
+plot(xx, yy, type="n", xlab="Time", ylab="Distance")
+
+polygon(xx, yy, col="gray")
+
+title("Distance Between Brownian Motions")
+
+## Colored plot margins, axis labels and titles.   You do need to be
+## careful with these kinds of effects.	It's easy to go completely
+## over the top and you can end up with your lunch all over the keyboard.
+## On the other hand, my market research clients love it.
+
+x <- c(0.00, 0.40, 0.86, 0.85, 0.69, 0.48, 0.54, 1.09, 1.11, 1.73, 2.05, 2.02)
+
+par(bg="lightgray")
+
+plot(x, type="n", axes=FALSE, ann=FALSE)
+
+```
+

@@ -12,7 +12,7 @@ show(omnr.glm)
 
 
 ```{r}
-glm.eq <- "cbind(suppressed, unsuppressed) ~ zone * load"
+glm.eq <- "cbind(suppressed, unsuppressed) ~ zone + load"
 
 glm.out <- glm(glm.eq, family=binomial(logit), data=omnr.glm)
 ```

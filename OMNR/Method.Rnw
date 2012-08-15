@@ -33,7 +33,7 @@ Conditional on $E_{\mathrm{t}}$ (i.e., the annual number of escapes), $L_{\mathr
 
 \noindent With the OMNR dataset .csv file downloaded to the working directory, the file was loaded into R.
 
-<<echo=FALSE>>=
+<<echo=TRUE>>=
 omnr <- read.csv("OMNR_data.csv")
 @
 
@@ -82,15 +82,22 @@ by=list(omnr.int.e$FIRE_YEAR),length)
 @
 
 
-<<echo=TRUE>>=
+<<echo=FALSE>>=
 omnr.glm <- data.frame(zone=rep(c("mea","int"),c(16,16)),year=rep(1989:2004,2),suppressed=c(49,10,52,28,5,34,58,33,21,23,12,6,6,11,10,1,137,83,12,79,42,93,199,89,73,150,83,57,101,38,77,16),unsuppressed=c(7,0,14,2,2,4,26,27,6,4,6,0,2,6,6,0,7,5,8,7,1,1,27,54,5,15,12,1,0,10,10,1),load=c(2429,1614,2559,960,743,1053,2122,1245,1634,2278,1017,644,1561,1138,1036,428,2429,1614,2559,960,743,1053,2122,1245,1634,2278,1017,644,1561,1138,1036,428))
 @
 
-<<echo=FALSE,results=verbatim>>=
-options(show.signif.stars=F)
-glm.eq <- "cbind(omnr.glm$suppressed, omnr.glm$unsuppressed) ~ omnr.glm$zone * omnr.glm$year"
+With the following equation
 
-glm.out <- glm(glm.eq, family=binomial(logit), data=omnr.glm)
+\noindent \texttt{glm.eq <- "cbind(omnr.glm\$suppressed, omnr.glm\$unsuppressed)\\
+\textasciitilde omnr.glm\$zone * omnr.glm\$year"}
+
+
+<<echo=TRUE>>=
+options(show.signif.stars=F)
+glm.eq <- "cbind(omnr.glm$suppressed, omnr.glm$unsuppressed)~ omnr.glm$zone * omnr.glm$year"
+
+glm.out <- glm(glm.eq, family=binomial(logit),
+               data=omnr.glm)
 
 summary(glm.out)
 

@@ -186,6 +186,301 @@ hljs.initHighlightingOnLoad();
 
 <pre><code class="r">omnr &lt;- read.csv(&quot;OMNR_data.csv&quot;, header = TRUE)
 
+## INT
+
+# create subset omnr.clean == only fires in the Intensive and Measured
+# Zones &amp; caused by Lightening
+omnr.clean &lt;- subset(omnr, subset = (omnr$FIRE_MGT_ZONE == &quot;INT&quot;))
+
+# then with omnr.clean &lt;- subset(omnr, subset = (omnr$FIRE_MGT_ZONE ==
+# &#39;MEA&#39;))
+
+omnr.3E &lt;- subset(omnr.clean, subset = (omnr.clean$LATITUDE &gt;= 48 &amp; omnr.clean$LATITUDE &lt;= 
+    51) &amp; (omnr.clean$LONGITUDE &lt;= -80 &amp; omnr.clean$LONGITUDE &gt;= -86))
+
+omnr.3W &lt;- subset(omnr.clean, subset = (omnr.clean$LATITUDE &gt;= 48 &amp; omnr.clean$LATITUDE &lt;= 
+    51) &amp; (omnr.clean$LONGITUDE &lt;= -88 &amp; omnr.clean$LONGITUDE &gt;= -92))
+
+omnr.3S &lt;- subset(omnr.clean, subset = (omnr.clean$LATITUDE &gt;= 51 &amp; omnr.clean$LATITUDE &lt;= 
+    53) &amp; (omnr.clean$LONGITUDE &lt;= -88 &amp; omnr.clean$LONGITUDE &gt;= -96))
+
+omnr.total &lt;- rbind(omnr.3E, omnr.3W, omnr.3S)
+
+# total fires in INT
+
+int &lt;- 4886
+
+# fire size class a
+
+a &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 0.4)
+
+burn &lt;- aggregate(a$FINAL_SIZE, by = list(a$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
+</code></pre>
+
+<pre><code>## [1] 27.09
+</code></pre>
+
+<pre><code class="r">
+a &lt;- aggregate(a$FINAL_SIZE, by = list(a$FIRE_YEAR), length)
+
+names(a) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+a &lt;- sum(a$Fires)
+
+a
+</code></pre>
+
+<pre><code>## [1] 3198
+</code></pre>
+
+<pre><code class="r">
+ap &lt;- (a/int) * 100
+
+ap
+</code></pre>
+
+<pre><code>## [1] 65.45
+</code></pre>
+
+<pre><code class="r">
+# fire size class b
+
+b &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 4)
+
+burn &lt;- aggregate(b$FINAL_SIZE, by = list(b$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
+</code></pre>
+
+<pre><code>## [1] 115.7
+</code></pre>
+
+<pre><code class="r">
+b &lt;- aggregate(b$FINAL_SIZE, by = list(b$FIRE_YEAR), length)
+
+names(b) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+b &lt;- sum(b$Fires)
+
+b &lt;- b - a
+
+b
+</code></pre>
+
+<pre><code>## [1] 1226
+</code></pre>
+
+<pre><code class="r">
+bp &lt;- (b/int) * 100
+
+bp
+</code></pre>
+
+<pre><code>## [1] 25.09
+</code></pre>
+
+<pre><code class="r">
+# fire size class c
+
+c &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 40)
+
+burn &lt;- aggregate(c$FINAL_SIZE, by = list(c$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
+</code></pre>
+
+<pre><code>## [1] 320.1
+</code></pre>
+
+<pre><code class="r">
+c &lt;- aggregate(c$FINAL_SIZE, by = list(c$FIRE_YEAR), length)
+
+names(c) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+c &lt;- sum(c$Fires)
+
+c &lt;- c - b - a
+
+c
+</code></pre>
+
+<pre><code>## [1] 292
+</code></pre>
+
+<pre><code class="r">
+cp &lt;- (c/int) * 100
+
+cp
+</code></pre>
+
+<pre><code>## [1] 5.976
+</code></pre>
+
+<pre><code class="r">
+# fire size class d
+
+d &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 200)
+
+burn &lt;- aggregate(d$FINAL_SIZE, by = list(d$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
+</code></pre>
+
+<pre><code>## [1] 741.3
+</code></pre>
+
+<pre><code class="r">
+d &lt;- aggregate(d$FINAL_SIZE, by = list(d$FIRE_YEAR), length)
+
+names(d) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+d &lt;- sum(d$Fires)
+
+d &lt;- d - c - b - a
+
+d
+</code></pre>
+
+<pre><code>## [1] 72
+</code></pre>
+
+<pre><code class="r">
+dp &lt;- (d/int) * 100
+
+dp
+</code></pre>
+
+<pre><code>## [1] 1.474
+</code></pre>
+
+<pre><code class="r">
+# fire size class e
+
+e &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 1000)
+
+burn &lt;- aggregate(e$FINAL_SIZE, by = list(e$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
+</code></pre>
+
+<pre><code>## [1] 2266
+</code></pre>
+
+<pre><code class="r">
+e &lt;- aggregate(e$FINAL_SIZE, by = list(e$FIRE_YEAR), length)
+
+names(e) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+e &lt;- sum(e$Fires)
+
+e &lt;- e - d - c - b - a
+
+e
+</code></pre>
+
+<pre><code>## [1] 46
+</code></pre>
+
+<pre><code class="r">
+ep &lt;- (e/int) * 100
+
+ep
+</code></pre>
+
+<pre><code>## [1] 0.9415
+</code></pre>
+
+<pre><code class="r">
+# fire size class f
+
+f &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 10000)
+
+burn &lt;- aggregate(f$FINAL_SIZE, by = list(f$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
+</code></pre>
+
+<pre><code>## [1] 13431
+</code></pre>
+
+<pre><code class="r">
+f &lt;- aggregate(f$FINAL_SIZE, by = list(f$FIRE_YEAR), length)
+
+names(f) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+f &lt;- sum(f$Fires)
+
+f &lt;- f - e - d - c - b - a
+
+f
+</code></pre>
+
+<pre><code>## [1] 42
+</code></pre>
+
+<pre><code class="r">
+fp &lt;- (f/int) * 100
+
+fp
+</code></pre>
+
+<pre><code>## [1] 0.8596
+</code></pre>
+
+<pre><code class="r">
+# fire size class g
+
+g &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &gt; 10000)
+
+burn &lt;- aggregate(g$FINAL_SIZE, by = list(g$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
+</code></pre>
+
+<pre><code>## [1] 49920
+</code></pre>
+
+<pre><code class="r">
+g &lt;- aggregate(g$FINAL_SIZE, by = list(g$FIRE_YEAR), length)
+
+names(g) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+g &lt;- sum(g$Fires)
+
+g
+</code></pre>
+
+<pre><code>## [1] 10
+</code></pre>
+
+<pre><code class="r">
+gp &lt;- (g/int) * 100
+
+gp
+</code></pre>
+
+<pre><code>## [1] 0.2047
+</code></pre>
+
+<pre><code class="r">
+## MEA
+
 # create subset omnr.clean == only fires in the Intensive and Measured
 # Zones &amp; caused by Lightening
 omnr.clean &lt;- subset(omnr, subset = (omnr$FIRE_MGT_ZONE == &quot;MEA&quot;))
@@ -201,163 +496,279 @@ omnr.3S &lt;- subset(omnr.clean, subset = (omnr.clean$LATITUDE &gt;= 51 &amp; om
 
 omnr.total &lt;- rbind(omnr.3E, omnr.3W, omnr.3S)
 
+# total fires in MEA
 
-A &lt;- sum(omnr.total$FINAL_SIZE)
+mea &lt;- 1643
 
-A
+# fire size class a
+
+a &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 0.4)
+
+burn &lt;- aggregate(a$FINAL_SIZE, by = list(a$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
 </code></pre>
 
-<pre><code>## [1] 329301
-</code></pre>
-
-<pre><code class="r">
-# area burned per year
-At &lt;- aggregate(omnr.total$FINAL_SIZE, by = list(omnr.total$FIRE_YEAR), sum)
-
-# rename columns
-names(At) &lt;- c(&quot;Year&quot;, &quot;Area (ha)&quot;)
-
-At
-</code></pre>
-
-<pre><code>##    Year Area (ha)
-## 1  1989   16569.3
-## 2  1990     279.2
-## 3  1991   16232.1
-## 4  1992     847.7
-## 5  1993   18272.2
-## 6  1994    1529.9
-## 7  1995   98735.6
-## 8  1996   78395.8
-## 9  1997    7047.8
-## 10 1998    9112.1
-## 11 1999   12944.3
-## 12 2000     131.0
-## 13 2001     716.4
-## 14 2002    3438.2
-## 15 2003   65033.0
-## 16 2004      16.8
+<pre><code>## [1] 7.612
 </code></pre>
 
 <pre><code class="r">
-# number of arivals per year
-Nt &lt;- aggregate(omnr.total$FINAL_SIZE, by = list(omnr.total$FIRE_YEAR), length)
+a &lt;- aggregate(a$FINAL_SIZE, by = list(a$FIRE_YEAR), length)
 
-# rename columns
-names(Nt) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+names(a) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
 
-Nt
+a &lt;- sum(a$Fires)
+
+a
 </code></pre>
 
-<pre><code>##    Year Fires
-## 1  1989   232
-## 2  1990    85
-## 3  1991   246
-## 4  1992    87
-## 5  1993    51
-## 6  1994   104
-## 7  1995   199
-## 8  1996   139
-## 9  1997   118
-## 10 1998   141
-## 11 1999    39
-## 12 2000    17
-## 13 2001    60
-## 14 2002    69
-## 15 2003    45
-## 16 2004    11
+<pre><code>## [1] 834
 </code></pre>
 
 <pre><code class="r">
-N &lt;- sum(Nt$Fires)
+ap &lt;- (a/mea) * 100
 
-N
+ap
 </code></pre>
 
-<pre><code>## [1] 1643
-</code></pre>
-
-<pre><code class="r">
-omnr.small &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 3)
-
-small &lt;- aggregate(omnr.small$FINAL_SIZE, by = list(omnr.small$FIRE_YEAR), length)
-
-names(small) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
-
-small &lt;- sum(small$Fires)
-
-small
-</code></pre>
-
-<pre><code>## [1] 1272
+<pre><code>## [1] 50.76
 </code></pre>
 
 <pre><code class="r">
-percent.small &lt;- (small/N) * 100
+# fire size class b
 
-percent.small
+b &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 4)
+
+burn &lt;- aggregate(b$FINAL_SIZE, by = list(b$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
 </code></pre>
 
-<pre><code>## [1] 77.42
-</code></pre>
-
-<pre><code class="r">
-omnr.big &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &gt; 200)
-
-big &lt;- aggregate(omnr.big$FINAL_SIZE, by = list(omnr.big$FIRE_YEAR), length)
-
-names(big) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
-
-big &lt;- sum(big$Fires)
-
-big
-</code></pre>
-
-<pre><code>## [1] 81
+<pre><code>## [1] 44.26
 </code></pre>
 
 <pre><code class="r">
-percent.big &lt;- (big/N) * 100
+b &lt;- aggregate(b$FINAL_SIZE, by = list(b$FIRE_YEAR), length)
 
-percent.big
+names(b) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+b &lt;- sum(b$Fires)
+
+b &lt;- b - a
+
+b
 </code></pre>
 
-<pre><code>## [1] 4.93
-</code></pre>
-
-<pre><code class="r">
-suppressed &lt;- N - (big + small)
-
-suppressed
-</code></pre>
-
-<pre><code>## [1] 290
+<pre><code>## [1] 478
 </code></pre>
 
 <pre><code class="r">
-percent.suppressed &lt;- (suppressed/N) * 100
+bp &lt;- (b/mea) * 100
 
-percent.suppressed
+bp
 </code></pre>
 
-<pre><code>## [1] 17.65
+<pre><code>## [1] 29.09
 </code></pre>
 
-<pre><code class="r">print(sessionInfo(), locale = FALSE)
+<pre><code class="r">
+# fire size class c
+
+c &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 40)
+
+burn &lt;- aggregate(c$FINAL_SIZE, by = list(c$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
 </code></pre>
 
-<pre><code>## R version 2.15.0 (2012-03-30)
-## Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
-## 
-## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
-## 
-## other attached packages:
-## [1] knitr_0.7
-## 
-## loaded via a namespace (and not attached):
-## [1] digest_0.5.2   evaluate_0.4.2 formatR_0.6    plyr_1.7.1    
-## [5] stringr_0.6    tools_2.15.0  
+<pre><code>## [1] 198.6
+</code></pre>
+
+<pre><code class="r">
+c &lt;- aggregate(c$FINAL_SIZE, by = list(c$FIRE_YEAR), length)
+
+names(c) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+c &lt;- sum(c$Fires)
+
+c &lt;- c - b - a
+
+c
+</code></pre>
+
+<pre><code>## [1] 204
+</code></pre>
+
+<pre><code class="r">
+cp &lt;- (c/mea) * 100
+
+cp
+</code></pre>
+
+<pre><code>## [1] 12.42
+</code></pre>
+
+<pre><code class="r">
+# fire size class d
+
+d &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 200)
+
+burn &lt;- aggregate(d$FINAL_SIZE, by = list(d$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
+</code></pre>
+
+<pre><code>## [1] 478.5
+</code></pre>
+
+<pre><code class="r">
+d &lt;- aggregate(d$FINAL_SIZE, by = list(d$FIRE_YEAR), length)
+
+names(d) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+d &lt;- sum(d$Fires)
+
+d &lt;- d - c - b - a
+
+d
+</code></pre>
+
+<pre><code>## [1] 45
+</code></pre>
+
+<pre><code class="r">
+dp &lt;- (d/mea) * 100
+
+dp
+</code></pre>
+
+<pre><code>## [1] 2.739
+</code></pre>
+
+<pre><code class="r">
+# fire size class e
+
+e &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 1000)
+
+burn &lt;- aggregate(e$FINAL_SIZE, by = list(e$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
+</code></pre>
+
+<pre><code>## [1] 1586
+</code></pre>
+
+<pre><code class="r">
+e &lt;- aggregate(e$FINAL_SIZE, by = list(e$FIRE_YEAR), length)
+
+names(e) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+e &lt;- sum(e$Fires)
+
+e &lt;- e - d - c - b - a
+
+e
+</code></pre>
+
+<pre><code>## [1] 36
+</code></pre>
+
+<pre><code class="r">
+ep &lt;- (e/mea) * 100
+
+ep
+</code></pre>
+
+<pre><code>## [1] 2.191
+</code></pre>
+
+<pre><code class="r">
+# fire size class f
+
+f &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 10000)
+
+burn &lt;- aggregate(f$FINAL_SIZE, by = list(f$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
+</code></pre>
+
+<pre><code>## [1] 9702
+</code></pre>
+
+<pre><code class="r">
+f &lt;- aggregate(f$FINAL_SIZE, by = list(f$FIRE_YEAR), length)
+
+names(f) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+f &lt;- sum(f$Fires)
+
+f &lt;- f - e - d - c - b - a
+
+f
+</code></pre>
+
+<pre><code>## [1] 37
+</code></pre>
+
+<pre><code class="r">
+fp &lt;- (f/mea) * 100
+
+fp
+</code></pre>
+
+<pre><code>## [1] 2.252
+</code></pre>
+
+<pre><code class="r">
+# fire size class g
+
+g &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &gt; 10000)
+
+burn &lt;- aggregate(g$FINAL_SIZE, by = list(g$FIRE_YEAR), sum)
+
+burn &lt;- mean(burn$x)
+
+burn
+</code></pre>
+
+<pre><code>## [1] 43518
+</code></pre>
+
+<pre><code class="r">
+g &lt;- aggregate(g$FINAL_SIZE, by = list(g$FIRE_YEAR), length)
+
+names(g) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
+
+g &lt;- sum(g$Fires)
+
+g
+</code></pre>
+
+<pre><code>## [1] 9
+</code></pre>
+
+<pre><code class="r">
+gp &lt;- (g/mea) * 100
+
+gp
+</code></pre>
+
+<pre><code>## [1] 0.5478
+</code></pre>
+
+<pre><code class="r">
 </code></pre>
 
 </body>

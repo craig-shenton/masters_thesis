@@ -34,6 +34,11 @@ Conditional on $E_{\mathrm{t}}$ (i.e., the annual number of escapes), $L_{\mathr
 
 \noindent With the OMNR dataset .csv file downloaded to the working directory, the file was loaded into R.
 
+\begin{Schunk}
+\begin{Sinput}
+> omnr <- read.csv("OMNR_data.csv")
+\end{Sinput}
+\end{Schunk}
 
 \noindent To calculate $N_{\mathrm{t}}$ the annual load, the total number of fires per year were aggregated.
 
@@ -48,13 +53,21 @@ Conditional on $E_{\mathrm{t}}$ (i.e., the annual number of escapes), $L_{\mathr
 
 
 
+
+With the following equation
+
+\noindent \texttt{glm.eq <- "cbind(omnr.glm\$suppressed, omnr.glm\$unsuppressed)\\
+ omnr.glm\$zone * omnr.glm\$year"}
+
+\backsim
 \begin{Schunk}
 \begin{Sinput}
-> omnr.glm <- data.frame(zone=rep(c("mea","int"),c(16,16)),year=rep(1989:2004,2),suppressed=c(49,10,52,28,5,34,58,33,21,23,12,6,6,11,10,1,137,83,12,79,42,93,199,89,73,150,83,57,101,38,77,16),unsuppressed=c(7,0,14,2,2,4,26,27,6,4,6,0,2,6,6,0,7,5,8,7,1,1,27,54,5,15,12,1,0,10,10,1),load=c(2429,1614,2559,960,743,1053,2122,1245,1634,2278,1017,644,1561,1138,1036,428,2429,1614,2559,960,743,1053,2122,1245,1634,2278,1017,644,1561,1138,1036,428))
+> options(show.signif.stars=F)
+> glm.eq <- "cbind(omnr.glm$suppressed, omnr.glm$unsuppressed)~ omnr.glm$zone * omnr.glm$year"
+> glm.out <- glm(glm.eq, family=binomial(logit),
++                data=omnr.glm)
+> summary(glm.out)
 \end{Sinput}
-\end{Schunk}
-
-\begin{Schunk}
 \begin{Soutput}
 Call:
 glm(formula = glm.eq, family = binomial(logit), data = omnr.glm)
@@ -78,11 +91,14 @@ AIC: 288.11
 
 Number of Fisher Scoring iterations: 5
 \end{Soutput}
+\begin{Sinput}
+> 
+\end{Sinput}
 \end{Schunk}
 
 \begin{center}
 % latex table generated in R 2.15.0 by xtable 1.7-0 package
-% Mon Jul 23 16:08:40 2012
+% Wed Jul 25 10:38:51 2012
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{rrrrr}

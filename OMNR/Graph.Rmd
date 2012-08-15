@@ -1,0 +1,377 @@
+Calculations
+========================================================
+
+Calculating the area burned per year & the number of arrivals (i.e., new fires) per year
+
+```{r}
+omnr <- read.csv("OMNR_data.csv", header=TRUE)
+
+## INT
+
+# create subset omnr.clean == only fires in the Intensive and Measured Zones & caused by Lightening
+omnr.clean <- subset(omnr, subset = (omnr$FIRE_MGT_ZONE == "INT"))
+
+# then with omnr.clean <- subset(omnr, subset = (omnr$FIRE_MGT_ZONE == "MEA"))
+                     
+omnr.3E <- subset(omnr.clean, subset = (omnr.clean$LATITUDE>=48 & omnr.clean$LATITUDE<=51) & (omnr.clean$LONGITUDE<=-80 & omnr.clean$LONGITUDE>=-86))
+
+omnr.3W <- subset(omnr.clean, subset = (omnr.clean$LATITUDE>=48 & omnr.clean$LATITUDE<=51) & (omnr.clean$LONGITUDE<=-88 & omnr.clean$LONGITUDE>=-92))
+
+omnr.3S <- subset(omnr.clean, subset = (omnr.clean$LATITUDE>=51 & omnr.clean$LATITUDE<=53) & (omnr.clean$LONGITUDE<=-88 & omnr.clean$LONGITUDE>=-96))
+
+omnr.total <- rbind(omnr.3E, omnr.3W, omnr.3S)
+
+# total fires in INT
+
+int <- 4886
+
+# fire size class a
+
+a <- subset(omnr.total, subset = omnr.total$FINAL_SIZE < 0.4)
+
+burn <- aggregate(a$FINAL_SIZE, by=list(a$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+a <- aggregate(a$FINAL_SIZE, by=list(a$FIRE_YEAR),length)
+
+names(a) <- c("Year", "Fires")
+
+a <- sum(a$Fires)
+
+a
+
+ap <- (a/int)*100
+
+ap
+
+# fire size class b
+
+b <- subset(omnr.total, subset = omnr.total$FINAL_SIZE < 4)
+
+burn <- aggregate(b$FINAL_SIZE, by=list(b$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+b <- aggregate(b$FINAL_SIZE, by=list(b$FIRE_YEAR),length)
+
+names(b) <- c("Year", "Fires")
+
+b <- sum(b$Fires)
+
+b <- b - a
+
+b
+
+bp <- (b/int)*100
+
+bp
+
+# fire size class c
+
+c <- subset(omnr.total, subset = omnr.total$FINAL_SIZE < 40)
+
+burn <- aggregate(c$FINAL_SIZE, by=list(c$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+c <- aggregate(c$FINAL_SIZE, by=list(c$FIRE_YEAR),length)
+
+names(c) <- c("Year", "Fires")
+
+c <- sum(c$Fires)
+
+c <- c - b - a
+
+c
+
+cp <- (c/int)*100
+
+cp
+
+# fire size class d
+
+d <- subset(omnr.total, subset = omnr.total$FINAL_SIZE < 200)
+
+burn <- aggregate(d$FINAL_SIZE, by=list(d$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+d <- aggregate(d$FINAL_SIZE, by=list(d$FIRE_YEAR),length)
+
+names(d) <- c("Year", "Fires")
+
+d <- sum(d$Fires)
+
+d <- d - c - b - a
+
+d
+
+dp <- (d/int)*100
+
+dp
+
+# fire size class e
+
+e <- subset(omnr.total, subset = omnr.total$FINAL_SIZE < 1000)
+
+burn <- aggregate(e$FINAL_SIZE, by=list(e$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+e <- aggregate(e$FINAL_SIZE, by=list(e$FIRE_YEAR),length)
+
+names(e) <- c("Year", "Fires")
+
+e <- sum(e$Fires)
+
+e <- e - d - c - b - a
+
+e
+
+ep <- (e/int)*100
+
+ep
+
+# fire size class f
+
+f <- subset(omnr.total, subset = omnr.total$FINAL_SIZE < 10000)
+
+burn <- aggregate(f$FINAL_SIZE, by=list(f$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+f <- aggregate(f$FINAL_SIZE, by=list(f$FIRE_YEAR),length)
+
+names(f) <- c("Year", "Fires")
+
+f <- sum(f$Fires)
+
+f <- f - e - d - c - b - a
+
+f
+
+fp <- (f/int)*100
+
+fp
+
+# fire size class g
+
+g <- subset(omnr.total, subset = omnr.total$FINAL_SIZE > 10000)
+
+burn <- aggregate(g$FINAL_SIZE, by=list(g$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+               
+g <- aggregate(g$FINAL_SIZE, by=list(g$FIRE_YEAR),length)
+
+names(g) <- c("Year", "Fires")
+
+g <- sum(g$Fires)
+
+g
+
+gp <- (g/int)*100
+
+gp
+
+## MEA
+
+# create subset omnr.clean == only fires in the Intensive and Measured Zones & caused by Lightening
+omnr.clean <- subset(omnr, subset = (omnr$FIRE_MGT_ZONE == "MEA"))
+                     
+omnr.3E <- subset(omnr.clean, subset = (omnr.clean$LATITUDE>=48 & omnr.clean$LATITUDE<=51) & (omnr.clean$LONGITUDE<=-80 & omnr.clean$LONGITUDE>=-86))
+
+omnr.3W <- subset(omnr.clean, subset = (omnr.clean$LATITUDE>=48 & omnr.clean$LATITUDE<=51) & (omnr.clean$LONGITUDE<=-88 & omnr.clean$LONGITUDE>=-92))
+
+omnr.3S <- subset(omnr.clean, subset = (omnr.clean$LATITUDE>=51 & omnr.clean$LATITUDE<=53) & (omnr.clean$LONGITUDE<=-88 & omnr.clean$LONGITUDE>=-96))
+
+omnr.total <- rbind(omnr.3E, omnr.3W, omnr.3S)
+
+# total fires in MEA
+
+mea <- 1643
+
+# fire size class a
+
+a <- subset(omnr.total, subset = omnr.total$FINAL_SIZE < 0.4)
+
+burn <- aggregate(a$FINAL_SIZE, by=list(a$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+a <- aggregate(a$FINAL_SIZE, by=list(a$FIRE_YEAR),length)
+
+names(a) <- c("Year", "Fires")
+
+a <- sum(a$Fires)
+
+a
+
+ap <- (a/mea)*100
+
+ap
+
+# fire size class b
+
+b <- subset(omnr.total, subset = omnr.total$FINAL_SIZE < 4)
+
+burn <- aggregate(b$FINAL_SIZE, by=list(b$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+b <- aggregate(b$FINAL_SIZE, by=list(b$FIRE_YEAR),length)
+
+names(b) <- c("Year", "Fires")
+
+b <- sum(b$Fires)
+
+b <- b - a
+
+b
+
+bp <- (b/mea)*100
+
+bp
+
+# fire size class c
+
+c <- subset(omnr.total, subset = omnr.total$FINAL_SIZE < 40)
+
+burn <- aggregate(c$FINAL_SIZE, by=list(c$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+c <- aggregate(c$FINAL_SIZE, by=list(c$FIRE_YEAR),length)
+
+names(c) <- c("Year", "Fires")
+
+c <- sum(c$Fires)
+
+c <- c - b - a
+
+c
+
+cp <- (c/mea)*100
+
+cp
+
+# fire size class d
+
+d <- subset(omnr.total, subset = omnr.total$FINAL_SIZE < 200)
+
+burn <- aggregate(d$FINAL_SIZE, by=list(d$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+d <- aggregate(d$FINAL_SIZE, by=list(d$FIRE_YEAR),length)
+
+names(d) <- c("Year", "Fires")
+
+d <- sum(d$Fires)
+
+d <- d - c - b - a
+
+d
+
+dp <- (d/mea)*100
+
+dp
+
+# fire size class e
+
+e <- subset(omnr.total, subset = omnr.total$FINAL_SIZE < 1000)
+
+burn <- aggregate(e$FINAL_SIZE, by=list(e$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+e <- aggregate(e$FINAL_SIZE, by=list(e$FIRE_YEAR),length)
+
+names(e) <- c("Year", "Fires")
+
+e <- sum(e$Fires)
+
+e <- e - d - c - b - a
+
+e
+
+ep <- (e/mea)*100
+
+ep
+
+# fire size class f
+
+f <- subset(omnr.total, subset = omnr.total$FINAL_SIZE < 10000)
+
+burn <- aggregate(f$FINAL_SIZE, by=list(f$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+f <- aggregate(f$FINAL_SIZE, by=list(f$FIRE_YEAR),length)
+
+names(f) <- c("Year", "Fires")
+
+f <- sum(f$Fires)
+
+f <- f - e - d - c - b - a
+
+f
+
+fp <- (f/mea)*100
+
+fp
+
+# fire size class g
+
+g <- subset(omnr.total, subset = omnr.total$FINAL_SIZE > 10000)
+
+burn <- aggregate(g$FINAL_SIZE, by=list(g$FIRE_YEAR),sum)
+
+burn <- mean(burn$x)
+
+burn
+                     
+g <- aggregate(g$FINAL_SIZE, by=list(g$FIRE_YEAR),length)
+
+names(g) <- c("Year", "Fires")
+
+g <- sum(g$Fires)
+
+g
+
+gp <- (g/mea)*100
+
+gp
+
+
+
+
+
+```

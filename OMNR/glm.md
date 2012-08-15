@@ -2,7 +2,6 @@ Year = not significant
 ========================================================
 
 
-
 ```r
 omnr.glm <- data.frame(zone = rep(c("mea", "int"), c(16, 16)), year = rep(1989:2004, 
     2), suppressed = c(49, 10, 52, 28, 5, 34, 58, 33, 21, 23, 12, 6, 6, 11, 
@@ -17,14 +16,9 @@ omnr.glm <- data.frame(zone = rep(c("mea", "int"), c(16, 16)), year = rep(1989:2
 
 
 
-
-
-
 ```r
 show(omnr.glm)
 ```
-
-
 
 ```
 ##    zone year suppressed unsuppressed load
@@ -65,25 +59,17 @@ show(omnr.glm)
 
 
 
-
-
-
 ```r
-glm.eq <- "cbind(suppressed, unsuppressed) ~ zone * load"
+glm.eq <- "cbind(suppressed, unsuppressed) ~ zone + load"
 
 glm.out <- glm(glm.eq, family = binomial(logit), data = omnr.glm)
 ```
 
 
 
-
-
-
 ```r
 summary(glm.out)
 ```
-
-
 
 ```
 ## 
@@ -92,35 +78,30 @@ summary(glm.out)
 ## 
 ## Deviance Residuals: 
 ##    Min      1Q  Median      3Q     Max  
-## -8.244  -0.646   0.712   2.034   4.850  
+## -8.184  -0.749   0.641   1.997   4.850  
 ## 
 ## Coefficients:
-##               Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)   1.985401   0.235853    8.42   <2e-16 ***
-## zonemea      -1.118996   0.395935   -2.83   0.0047 ** 
-## load          0.000068   0.000141    0.48   0.6303    
-## zonemea:load  0.000104   0.000224    0.46   0.6424    
+##              Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)  1.920955   0.189467   10.14  < 2e-16 ***
+## zonemea     -0.946418   0.137669   -6.87  6.2e-12 ***
+## load         0.000109   0.000110    1.00     0.32    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
 ## (Dispersion parameter for binomial family taken to be 1)
 ## 
 ##     Null deviance: 238.46  on 31  degrees of freedom
-## Residual deviance: 193.22  on 28  degrees of freedom
-## AIC: 297.6
+## Residual deviance: 193.44  on 29  degrees of freedom
+## AIC: 295.8
 ## 
 ## Number of Fisher Scoring iterations: 5
 ## 
 ```
 
-
-
 ```r
 
 anova(glm.out, test = "Chisq")
 ```
-
-
 
 ```
 ## Analysis of Deviance Table
@@ -132,25 +113,19 @@ anova(glm.out, test = "Chisq")
 ## Terms added sequentially (first to last)
 ## 
 ## 
-##           Df Deviance Resid. Df Resid. Dev Pr(>Chi)    
-## NULL                         31        238             
-## zone       1     44.0        30        194  3.2e-11 ***
-## load       1      1.0        29        193     0.32    
-## zone:load  1      0.2        28        193     0.64    
+##      Df Deviance Resid. Df Resid. Dev Pr(>Chi)    
+## NULL                    31        238             
+## zone  1       44        30        194  3.2e-11 ***
+## load  1        1        29        193     0.32    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ```
 
 
 
-
-
-
 ```r
 print(sessionInfo(), locale = FALSE)
 ```
-
-
 
 ```
 ## R version 2.15.0 (2012-03-30)
@@ -160,13 +135,10 @@ print(sessionInfo(), locale = FALSE)
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] knitr_0.5
+## [1] knitr_0.7
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_0.9.10     codetools_0.2-8 digest_0.5.2    evaluate_0.4.2 
-##  [5] formatR_0.4     highlight_0.3.1 parser_0.0-14   plyr_1.7.1     
-##  [9] stringr_0.6     tools_2.15.0   
+## [1] digest_0.5.2   evaluate_0.4.2 formatR_0.6    plyr_1.7.1    
+## [5] stringr_0.6    tools_2.15.0  
 ```
-
-
 

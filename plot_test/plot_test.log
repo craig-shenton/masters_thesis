@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.9.21)  11 JUN 2012 23:22
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.9.21)  9 AUG 2012 14:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -257,58 +257,23 @@ e
 ))
 (./plot_test-concordance.tex) [1
 
-{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `T1/aess/m/it' in size <10> not available
-(Font)              Font shape `T1/aess/m/sl' tried instead on input line 47.
-
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
-
- []
-
-[1] [2]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 63.
- (/usr/local/texlive/2010/texmf-dist/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-<plot_test-fig1.pdf, id=16, 433.62pt x 433.62pt>
-File: plot_test-fig1.pdf Graphic file (type pdf)
- <use plot_test-fig1.pdf>
-[3
-
- <./plot_test-fig1.pdf>] (./plot_test.aux) ) 
+{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./plot
+_test.aux) ) 
 Here is how much of TeX's memory you used:
- 2539 strings out of 493747
- 36835 string characters out of 3143546
- 84449 words of memory out of 3000000
- 5780 multiletter control sequences out of 15000+200000
- 19897 words of font info for 41 fonts, out of 3000000 for 9000
+ 2495 strings out of 493747
+ 36121 string characters out of 3143546
+ 81441 words of memory out of 3000000
+ 5751 multiletter control sequences out of 15000+200000
+ 14538 words of font info for 30 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 37i,5n,23p,809b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2010/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsltt10.pfb></usr/local/texlive/2010/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2010/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2010/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2010/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on plot_test.pdf (4 pages, 69430 bytes).
+ 37i,4n,23p,235b,174s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmss10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mssbx10.pfb>
+Output written on plot_test.pdf (1 page, 24579 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 17 PDF objects out of 1000 (max. 8388607)
+ 10 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 10 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5 words of extra memory for PDF output out of 10000 (max. 10000000)
 

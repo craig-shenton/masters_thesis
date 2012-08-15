@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<title>Calculations</title>
+<title></title>
 
 <base target="_blank"/>
 
@@ -180,184 +180,42 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<h1>Calculations</h1>
-
-<p>Calculating the area burned per year &amp; the number of arrivals (i.e., new fires) per year</p>
-
-<pre><code class="r">omnr &lt;- read.csv(&quot;OMNR_data.csv&quot;, header = TRUE)
-
-# create subset omnr.clean == only fires in the Intensive and Measured
-# Zones &amp; caused by Lightening
-omnr.clean &lt;- subset(omnr, subset = (omnr$FIRE_MGT_ZONE == &quot;MEA&quot;))
-
-omnr.3E &lt;- subset(omnr.clean, subset = (omnr.clean$LATITUDE &gt;= 48 &amp; omnr.clean$LATITUDE &lt;= 
-    51) &amp; (omnr.clean$LONGITUDE &lt;= -80 &amp; omnr.clean$LONGITUDE &gt;= -86))
-
-omnr.3W &lt;- subset(omnr.clean, subset = (omnr.clean$LATITUDE &gt;= 48 &amp; omnr.clean$LATITUDE &lt;= 
-    51) &amp; (omnr.clean$LONGITUDE &lt;= -88 &amp; omnr.clean$LONGITUDE &gt;= -92))
-
-omnr.3S &lt;- subset(omnr.clean, subset = (omnr.clean$LATITUDE &gt;= 51 &amp; omnr.clean$LATITUDE &lt;= 
-    53) &amp; (omnr.clean$LONGITUDE &lt;= -88 &amp; omnr.clean$LONGITUDE &gt;= -96))
-
-omnr.total &lt;- rbind(omnr.3E, omnr.3W, omnr.3S)
-
-
-A &lt;- sum(omnr.total$FINAL_SIZE)
-
-A
+<pre><code class="r">
+title(main = &quot;Notched Boxplots&quot;, xlab = &quot;Group&quot;, font.main = 4, font.lab = 1)
 </code></pre>
 
-<pre><code>## [1] 329301
+<pre><code>## Error: plot.new has not been called yet
 </code></pre>
 
 <pre><code class="r">
-# area burned per year
-At &lt;- aggregate(omnr.total$FINAL_SIZE, by = list(omnr.total$FIRE_YEAR), sum)
+## An example showing how to fill between curves.
 
-# rename columns
-names(At) &lt;- c(&quot;Year&quot;, &quot;Area (ha)&quot;)
+par(bg = &quot;white&quot;)
 
-At
+n &lt;- 100
+
+y &lt;- c(0.83, 0.77, 0.74)
+
+x &lt;- c(&quot;3e&quot;, &quot;3w&quot;, &quot;3s&quot;)
+
+xx &lt;- c(0:n, n:0)
+
+yy &lt;- c(x, rev(y))
+
+plot(xx, yy, type = &quot;n&quot;, xlab = &quot;Time&quot;, ylab = &quot;Distance&quot;)
 </code></pre>
 
-<pre><code>##    Year Area (ha)
-## 1  1989   16569.3
-## 2  1990     279.2
-## 3  1991   16232.1
-## 4  1992     847.7
-## 5  1993   18272.2
-## 6  1994    1529.9
-## 7  1995   98735.6
-## 8  1996   78395.8
-## 9  1997    7047.8
-## 10 1998    9112.1
-## 11 1999   12944.3
-## 12 2000     131.0
-## 13 2001     716.4
-## 14 2002    3438.2
-## 15 2003   65033.0
-## 16 2004      16.8
+<pre><code>## Error: &#39;x&#39; and &#39;y&#39; lengths differ
 </code></pre>
 
 <pre><code class="r">
-# number of arivals per year
-Nt &lt;- aggregate(omnr.total$FINAL_SIZE, by = list(omnr.total$FIRE_YEAR), length)
-
-# rename columns
-names(Nt) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
-
-Nt
+polygon(xx, yy, col = &quot;gray&quot;)
 </code></pre>
 
-<pre><code>##    Year Fires
-## 1  1989   232
-## 2  1990    85
-## 3  1991   246
-## 4  1992    87
-## 5  1993    51
-## 6  1994   104
-## 7  1995   199
-## 8  1996   139
-## 9  1997   118
-## 10 1998   141
-## 11 1999    39
-## 12 2000    17
-## 13 2001    60
-## 14 2002    69
-## 15 2003    45
-## 16 2004    11
+<pre><code>## Error: &#39;x&#39; and &#39;y&#39; lengths differ
 </code></pre>
 
 <pre><code class="r">
-N &lt;- sum(Nt$Fires)
-
-N
-</code></pre>
-
-<pre><code>## [1] 1643
-</code></pre>
-
-<pre><code class="r">
-omnr.small &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &lt; 3)
-
-small &lt;- aggregate(omnr.small$FINAL_SIZE, by = list(omnr.small$FIRE_YEAR), length)
-
-names(small) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
-
-small &lt;- sum(small$Fires)
-
-small
-</code></pre>
-
-<pre><code>## [1] 1272
-</code></pre>
-
-<pre><code class="r">
-percent.small &lt;- (small/N) * 100
-
-percent.small
-</code></pre>
-
-<pre><code>## [1] 77.42
-</code></pre>
-
-<pre><code class="r">
-omnr.big &lt;- subset(omnr.total, subset = omnr.total$FINAL_SIZE &gt; 200)
-
-big &lt;- aggregate(omnr.big$FINAL_SIZE, by = list(omnr.big$FIRE_YEAR), length)
-
-names(big) &lt;- c(&quot;Year&quot;, &quot;Fires&quot;)
-
-big &lt;- sum(big$Fires)
-
-big
-</code></pre>
-
-<pre><code>## [1] 81
-</code></pre>
-
-<pre><code class="r">
-percent.big &lt;- (big/N) * 100
-
-percent.big
-</code></pre>
-
-<pre><code>## [1] 4.93
-</code></pre>
-
-<pre><code class="r">
-suppressed &lt;- N - (big + small)
-
-suppressed
-</code></pre>
-
-<pre><code>## [1] 290
-</code></pre>
-
-<pre><code class="r">
-percent.suppressed &lt;- (suppressed/N) * 100
-
-percent.suppressed
-</code></pre>
-
-<pre><code>## [1] 17.65
-</code></pre>
-
-<pre><code class="r">print(sessionInfo(), locale = FALSE)
-</code></pre>
-
-<pre><code>## R version 2.15.0 (2012-03-30)
-## Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
-## 
-## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
-## 
-## other attached packages:
-## [1] knitr_0.7
-## 
-## loaded via a namespace (and not attached):
-## [1] digest_0.5.2   evaluate_0.4.2 formatR_0.6    plyr_1.7.1    
-## [5] stringr_0.6    tools_2.15.0  
 </code></pre>
 
 </body>

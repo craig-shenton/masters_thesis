@@ -4,7 +4,9 @@ Zone and Ecoregion
 ```{r}
 omnr.glm <- data.frame(zone=rep(c("mea","int"),c(3,3)),ecoregion=rep(c("E3","W3","S3")),suppressed=c(60,194,111,152,91,44),unsuppressed=c(20,67,19,20,43,10))
 
-glm.eq <- "cbind(suppressed, unsuppressed) ~ zone * ecoregion"
+omnr.glm
+
+glm.eq <- "cbind(suppressed, unsuppressed) ~ zone + ecoregion"
 
 glm.out <- glm(glm.eq, family=binomial(logit), data=omnr.glm)
 
@@ -12,13 +14,13 @@ summary(glm.out)
 ```
 
 ```{r}
-exp(-0.930)                         # antilog of the zone/mea coefficient
+exp(-0.71423)                         # antilog of the zone/mea coefficient
 # This shows that measured zone was at a significant disadvantage when ecoregion and the interaction are controlled.
 ```
 
 ```{r}
-1/exp(-1.0521)
-# All else being equal, the odds of a fire in the intensive zone being suppressed were 2.86 times the odds of a fire in the measured zone being suppressed.
+1/exp(-0.71423)
+# All else being equal, the odds of a fire in the intensive zone being suppressed were 2 times the odds of a fire in the measured zone being suppressed.
 ```
 
 ```{r}
