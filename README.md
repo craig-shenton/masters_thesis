@@ -13,6 +13,8 @@ The challenge this research sought to address therefore, was to improve upon the
 
 ###Files
 
-*master.pdf - Final document.
-*OMNR_dta.csv - Raw dataset.
-*Sweave files - .Rnw version of each chapter.
+master.pdf - Final document.
+
+OMNR_dta.csv - Raw dataset.
+
+Sweave files - .Rnw version of each chapter.
