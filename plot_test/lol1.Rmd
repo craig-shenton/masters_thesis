@@ -1,9 +1,0 @@
-
-```{r}
-x<-c(1,2,3,4,5)
-y<-c(1.1, 2.3, 3.0, 3.9, 5.1)
-ucl<-c(1.3, 2.4, 3.5, 4.1, 5.3)
-lcl<-c(.9, 1.8, 2.7, 3.8, 5.0)
-plot(x,y, ylim=range(c(lcl,ucl)))
-arrows(x,ucl,x,lcl,length=.05,angle=90,code=3) 
-```

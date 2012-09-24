@@ -1,0 +1,182 @@
+\begin{spacing}{1.5}
+\phantom
+\phantom
+\phantom
+\phantom
+\section{Appendix A}
+\phantom
+\phantom
+\subsection{Programming Operations}
+With the OMNR dataset .csv file downloaded to the working directory, the file is loaded into R.\\
+
+\noindent \texttt{omnr <-- read.csv("$\sim$/Dropbox/Masters/m\_thesis/OMNR/OMNR\_data.csv")} \\
+
+\noindent A simple operation sub--divides the dataset into fires in the Intensive (INT) and Measured (MEA) fire management zones. \\
+
+\noindent \texttt{omnr.clean <-- subset(omnr, subset = omnr\$FIRE\_MGT\_ZONE == "MEA" \textbar \linebreak omnr\$FIRE\_MGT\_ZONE == "INT")}
+
+\subsubsection{Sub--setting Ecoregions}
+The dataset is again sub--divided into the three ecoregions (3E, 3W and 3S) using logic operations that delineate along both latitude and longitude. \\
+
+\noindent \texttt{omnr.3E <-- subset(omnr.clean, subset = (omnr.clean\$LATITUDE>=48 \&\linebreak omnr.clean\$LATITUDE<=51) \& (omnr.clean\$LONGITUDE<=-80 \& omnr.clean\$\linebreak LONGITUDE>=-86))} \\
+
+\noindent \texttt{omnr.3W <-- subset(omnr.clean, subset = (omnr.clean\$LATITUDE>=48 \&\linebreak omnr.clean\$LATITUDE<=51) \& (omnr.clean\$LONGITUDE<=-88 \& omnr.clean\$\linebreak LONGITUDE>=-92)) }\\
+
+\noindent \texttt{omnr.3S <-- subset(omnr.clean, subset = (omnr.clean\$LATITUDE>=51 \&\linebreak omnr.clean\$LATITUDE<=53) \& (omnr.clean\$LONGITUDE<=-88 \& omnr.clean\$\linebreak LONGITUDE>=-96)) }\\
+
+\subsubsection{Calculating Fire Suppression Ratios}
+Calculating the number of suppressed and unsuppressed fires in both Measured and Intensive zones, per ecoregion.\\
+
+\noindent \textbf{Ecoregion 3W} \\
+
+\noindent Suppressed fires in ecoregion 3W, Measured zone. \\
+
+\noindent \texttt{omnr.3W.mea.s <-- subset(omnr.3W, subset = (omnr.3W\$FIRE\_MGT\_ZONE==\linebreak "MEA" \& omnr.3W\$FINAL\_SIZE>3 \& omnr.3W\$FINAL\_SIZE<200))} \\
+
+\noindent Unsuppressed fires in ecoregion 3W, Measured zone. \\
+
+\noindent \texttt{omnr.3W.mea.e <-- subset(omnr.3W, subset = (omnr.3W\$FIRE\_MGT\_ZONE==\linebreak "MEA" \& omnr.3W\$FINAL\_SIZE>200))} \\
+
+\noindent Suppressed fires in ecoregion 3W, Intensive zone. \\
+
+\noindent \texttt{omnr.3W.int.s <-- subset(omnr.3W, subset = (omnr.3W\$FIRE\_MGT\_ZONE==\linebreak "INT" \& omnr.3W\$FINAL\_SIZE>3 \& omnr.3W\$FINAL\_SIZE<200))} \\
+
+\noindent Unsuppressed fires in ecoregion 3W, Intensive zone. \\
+
+\noindent \texttt{omnr.3W.int.e <-- subset(omnr.3W, subset = (omnr.3W\$FIRE\_MGT\_ZONE==\linebreak "INT" \& omnr.3W\$FINAL\_SIZE>200))} \\
+
+\noindent \textbf{Ecoregion 3E} \\
+
+\noindent Suppressed fires in ecoregion 3E, Measured zone. \\
+
+\noindent \texttt{omnr.3E.mea.s <-- subset(omnr.3E, subset = (omnr.3E\$FIRE\_MGT\_ZONE==\linebreak "MEA" \& omnr.3E\$FINAL\_SIZE>3 \& omnr.3E\$FINAL\_SIZE<200))} \\
+
+\noindent Unsuppressed fires in ecoregion 3E, Measured zone. \\
+
+\noindent \texttt{omnr.3E.mea.e <-- subset(omnr.3E, subset = (omnr.3E\$FIRE\_MGT\_ZONE==\linebreak "MEA" \& omnr.3E\$FINAL\_SIZE>200))} \\
+
+\noindent Suppressed fires in ecoregion 3E, Intensive zone. \\
+
+\noindent \texttt{omnr.3E.int.s <-- subset(omnr.3E, subset = (omnr.3E\$FIRE\_MGT\_ZONE==\linebreak "INT" \& omnr.3E\$FINAL\_SIZE>3 \& omnr.3E\$FINAL\_SIZE<200))} \\
+
+\noindent Unsuppressed fires in ecoregion 3E, Intensive zone. \\
+
+\noindent \texttt{omnr.3E.int.e <-- subset(omnr.3E, subset = (omnr.3E\$FIRE\_MGT\_ZONE==\linebreak "INT" \& omnr.3E\$FINAL\_SIZE>200))} \\
+
+\noindent \textbf{Ecoregion 3S} \\
+
+\noindent Suppressed fires in ecoregion 3S, Measured zone. \\
+
+\noindent \texttt{omnr.3S.mea.s <-- subset(omnr.3S, subset = (omnr.3S\$FIRE\_MGT\_ZONE==\linebreak "MEA" \& omnr.3S\$FINAL\_SIZE>3 \& omnr.3S\$FINAL\_SIZE<200))} \\
+
+\noindent Unsuppressed fires in ecoregion 3S, Measured zone. \\
+
+\noindent \texttt{omnr.3S.mea.e <-- subset(omnr.3S, subset = (omnr.3S\$FIRE\_MGT\_ZONE==\linebreak "MEA" \& omnr.3S\$FINAL\_SIZE>200))} \\
+
+\noindent Suppressed fires in ecoregion 3S, Intensive zone. \\
+
+\noindent \texttt{omnr.3S.int.s <-- subset(omnr.3S, subset = (omnr.3S\$FIRE\_MGT\_ZONE==\linebreak "INT" \& omnr.3S\$FINAL\_SIZE>3 \& omnr.3E\$FINAL\_SIZE<200))} \\
+
+\noindent Unsuppressed fires in ecoregion 3E, Intensive zone. \\
+
+\noindent \texttt{omnr.3S.int.e <-- subset(omnr.3S, subset = (omnr.3S\$FIRE\_MGT\_ZONE==\linebreak "INT" \& omnr.3S\$FINAL\_SIZE>200))}
+
+\subsubsection{Aggregating Suppressed and Unsuppressed Fires}
+Aggregating the number of suppressed and unsuppressed fires in both Measured and Intensive zones, per ecoregion.\\
+
+\noindent \textbf{Ecoregion 3W} \\
+
+\noindent \texttt{omnr.3W.mea.Ne <-- aggregate(omnr.3W.mea.e\$FINAL\_SIZE $\sim$ omnr.3W.mea.\linebreak e\$FIRE\_YEAR, data=omnr.3W.mea.e, FUN=length)} \\
+
+\noindent \texttt{omnr.3W.mea.Ns <-- aggregate(omnr.3W.mea.s\$FINAL\_SIZE $\sim$ omnr.3W.mea.\linebreak s\$FIRE\_YEAR, data=omnr.3W.mea.s, FUN=length)} \\
+
+\noindent \texttt{omnr.3W.int.Ne <-- aggregate(omnr.3W.int.e\$FINAL\_SIZE $\sim$ omnr.3W.int.\linebreak e\$FIRE\_YEAR, data=omnr.3W.int.e, FUN=length)} \\
+
+\noindent \texttt{omnr.3W.int.Ns <-- aggregate(omnr.3W.int.s\$FINAL\_SIZE $\sim$ omnr.3W.int.\linebreak s\$FIRE\_YEAR, data=omnr.3W.int.s, FUN=length)} \\
+
+\noindent \textbf{Ecoregion 3E} \\
+
+\noindent \texttt{omnr.3E.mea.Ne <-- aggregate(omnr.3E.mea.e\$FINAL\_SIZE $\sim$ omnr.3E.mea.\linebreak e\$FIRE\_YEAR, data=omnr.3E.mea.e, FUN=length)} \\
+
+\noindent \texttt{omnr.3E.mea.Ns <-- aggregate(omnr.3E.mea.s\$FINAL\_SIZE $\sim$ omnr.3E.mea.\linebreak s\$FIRE\_YEAR, data=omnr.3E.mea.s, FUN=length)} \\
+
+\noindent \texttt{omnr.3E.int.Ne <-- aggregate(omnr.3E.int.e\$FINAL\_SIZE $\sim$ omnr.3E.int.\linebreak e\$FIRE\_YEAR, data=omnr.3E.int.e, FUN=length)} \\
+
+\noindent \texttt{omnr.3E.int.Ns <-- aggregate(omnr.3E.int.s\$FINAL\_SIZE $\sim$ omnr.3E.int.\linebreak s\$FIRE\_YEAR, data=omnr.3E.int.s, FUN=length)} \\
+
+\clearpage
+
+\noindent \textbf{Ecoregion 3S} \\
+
+\noindent \texttt{omnr.3S.mea.Ne <-- aggregate(omnr.3S.mea.e\$FINAL\_SIZE $\sim$ omnr.3S.mea.\linebreak e\$FIRE\_YEAR, data=omnr.3S.mea.e, FUN=length)} \\
+
+\noindent \texttt{omnr.3S.mea.Ns <-- aggregate(omnr.3S.mea.s\$FINAL\_SIZE $\sim$ omnr.3S.mea.\linebreak s\$FIRE\_YEAR, data=omnr.3S.mea.s, FUN=length)} \\
+
+\noindent \texttt{omnr.3S.int.Ne <-- aggregate(omnr.3S.int.e\$FINAL\_SIZE $\sim$ omnr.3S.int.\linebreak e\$FIRE\_YEAR, data=omnr.3S.int.e, FUN=length)} \\
+
+\noindent \texttt{omnr.3S.int.Ns <-- aggregate(omnr.3S.int.s\$FINAL\_SIZE $\sim$ omnr.3S.int.\linebreak s\$FIRE\_YEAR, data=omnr.3S.int.s, FUN=length)} 
+
+\subsection{Generalised Liner Models}
+Creating a new data frame of the number of suppressed unsuppressed fires in each ecoregion/fire management zone (data taken from the results of previous calculations). \\
+
+\noindent \texttt{omnr.glm <- data.frame(zone=rep(c("mea","int"),c(3,3)), ecoregion=\linebreak rep(c("E3","W3","S3")),suppressed=c(60,194,111,152,91,44),\linebreak unsuppressed=c(20,67,19,20,43,10))} \\
+
+\noindent Equation to be used in the generalised liner model: \\
+
+\noindent \texttt{glm.eq <-- "cbind(suppressed, unsuppressed) $\sim$ zone + ecoregion"} \\
+
+\noindent Generalised liner model with logit link function: \\
+
+\noindent \texttt{glm.out <-- glm(glm.eq, family=binomial(logit), data=omnr.glm)} \\
+
+\noindent \texttt{summary(glm.out)}
+
+\subsection{Temporal Model}
+Calculating the annual load count: \\
+
+\noindent \texttt{load <-- aggregate(omnr\$FINAL\_SIZE, by=list(omnr\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(load) <-- c("Year", "Nt")} \\
+
+\noindent Next the annual number of suppressed and unsuppressed fires, in both the Intensive and Measured zones was calculated. \\
+
+\noindent \texttt{mea.ns <-- aggregate(omnr.mea.s\$FINAL\_SIZE, by=list(omnr.mea.s\$FIRE\_\linebreak YEAR),length)} \\
+
+\noindent \texttt{mea.ne <-- aggregate(omnr.mea.e\$FINAL\_SIZE, by=list(omnr.mea.e\$FIRE\_\linebreak YEAR),length)} \\
+
+\noindent \texttt{int.ns <-- aggregate(omnr.int.s\$FINAL\_SIZE, by=list(omnr.int.s\$FIRE\_\linebreak YEAR),length)} \\
+
+\noindent \texttt{int.ne <-- aggregate(omnr.int.e\$FINAL\_SIZE, by=list(omnr.int.e\$FIRE\_\linebreak YEAR),length)} \\
+
+\noindent A new data frame of the annual number of suppressed unsuppressed fires in each fire management zone, along with the annual load counts was created from the results of the previous calculations. \\
+
+\noindent \texttt{temp.glm <-- data.frame(zone=rep(c("mea","int"),c(16,16)), year=rep\linebreak (1989:2004,2),suppressed=c(49,10,52,28,5,34,58,33,21,23,12,6,6,11,\linebreak 10,1,137,83,12,79,42,93,199,89,73,150,83,57,101,38,77,16),\linebreak unsuppressed=c(7,0,14,2,2,4,26,27,6,4,6,0,2,6,6,0,7,5,8,7,1,1,27,\linebreak 54,5,15,12,1,0,10,10,1),load=c(2429,1614,2559,960,743,1053,2122,\linebreak 1245,1634,2278,1017,644,1561,1138,1036,428,2429,1614,2559,960,743,\linebreak 1053,2122,1245,1634,2278,1017,644,1561,1138,1036,428))} \\
+
+\clearpage
+
+\noindent Equation to be used in the generalised liner model
+
+\noindent \texttt{glm.eq <-- "cbind(suppressed, unsuppressed) $\sim$ zone + load"} \\
+
+\noindent Generalised liner model with logit link function
+
+\noindent \texttt{glm.out <-- glm(glm.eq, family=binomial(logit), data=temp.glm)} \\
+
+\noindent \texttt{summary(glm.out)}
+
+\subsection{ANOVA test}
+Equation used for the Analysis of Variance test: \\
+
+\noindent \texttt{anova(glm.out, test="Chisq")}
+
+\subsection{Results}
+Antilog of the zone/mea coefficient: \\
+
+\noindent \texttt{exp(-0.930)} \\       
+
+\noindent \texttt{1/exp(-1.0521)} 
+
+
+
+\end{spacing}
+\clearpage

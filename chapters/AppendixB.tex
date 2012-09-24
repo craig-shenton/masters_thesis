@@ -1,0 +1,348 @@
+\begin{spacing}{1.5}
+\phantom
+\phantom
+\phantom
+\phantom
+\section{Appendix B}
+\phantom
+\phantom
+\subsection{Programming Operations}
+With the OMNR dataset .csv file downloaded to the working directory, the file is loaded into R.\\
+
+\noindent \texttt{omnr <-- read.csv("$\sim$/Dropbox/Masters/m\_thesis/OMNR/OMNR\_data.csv")} \\
+
+\noindent Sub--divide the dataset into the Intensive (INT) and Measured (MEA) fire management zones. \\
+
+\noindent \texttt{omnr.clean <-- subset(omnr, subset = omnr\$FIRE\_MGT\_ZONE == "MEA" \textbar \linebreak omnr\$FIRE\_MGT\_ZONE == "INT")}
+
+\subsubsection{Sub--setting Ecoregions}
+Sub--divide into the three ecoregions (3E, 3W and 3S). \\
+
+\noindent \texttt{omnr.3E <-- subset(omnr.clean, subset = (omnr.clean\$LATITUDE>=48 \&\linebreak omnr.clean\$LATITUDE<=51) \& (omnr.clean\$LONGITUDE<=-80 \& omnr.clean\$\linebreak LONGITUDE>=-86))} \\
+
+\noindent \texttt{omnr.3W <-- subset(omnr.clean, subset = (omnr.clean\$LATITUDE>=48 \&\linebreak omnr.clean\$LATITUDE<=51) \& (omnr.clean\$LONGITUDE<=-88 \& omnr.clean\$\linebreak LONGITUDE>=-92)) }\\
+
+\noindent \texttt{omnr.3S <-- subset(omnr.clean, subset = (omnr.clean\$LATITUDE>=51 \&\linebreak omnr.clean\$LATITUDE<=53) \& (omnr.clean\$LONGITUDE<=-88 \& omnr.clean\$\linebreak LONGITUDE>=-96)) }\\
+
+\noindent \texttt{omnr.total <- rbind(omnr.3E, omnr.3W, omnr.3S)}
+
+\subsubsection{Fire--size Distributions (a-g) in the Intensive zone}
+\noindent Total fires in INT. \\
+
+\noindent \texttt{int <- 4886} \\
+
+\noindent \textbf{Fire size class (a)}. \\
+
+\noindent \texttt{a <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 0.4)} \\
+
+\noindent \texttt{burn <- aggregate(a\$FINAL\_SIZE, by=list(a\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+                     
+\noindent \texttt{a <- aggregate(a\$FINAL\_SIZE, by=list(a\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(a) <- c("Year", "Fires")} \\
+
+\noindent \texttt{a <- sum(a\$Fires)} \\
+
+\noindent \texttt{ap <- (a/int)*100} \\
+
+\noindent \textbf{Fire size class (b)}. \\
+
+\noindent \texttt{b <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 4)} \\
+
+\noindent \texttt{burn <- aggregate(b\$FINAL\_SIZE, by=list(b\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+                     
+\noindent \texttt{b <- aggregate(b\$FINAL\_SIZE, by=list(b\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(b) <- c("Year", "Fires")} \\
+
+\noindent \texttt{b <- sum(b\$Fires)} \\
+
+\noindent \texttt{b <- b - a} \\
+
+\noindent \texttt{bp <- (b/int)*100} \\
+
+\noindent \textbf{Fire size class (c)}. \\
+
+\noindent \texttt{c <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 40)} \\
+
+\noindent \texttt{burn <- aggregate(c\$FINAL\_SIZE, by=list(c\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+                     
+\noindent \texttt{c <- aggregate(c\$FINAL\_SIZE, by=list(c\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(c) <- c("Year", "Fires")} \\
+
+\noindent \texttt{c <- sum(c\$Fires)} \\
+
+\noindent \texttt{c <- c - b - a} \\
+
+\noindent \texttt{cp <- (c/int)*100} \\
+
+\noindent \textbf{Fire size class (d)}. \\
+
+\noindent \texttt{d <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 200)} \\
+
+\noindent \texttt{burn <- aggregate(d\$FINAL\_SIZE, by=list(d\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+                     
+\noindent \texttt{d <- aggregate(d\$FINAL\_SIZE, by=list(d\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(d) <- c("Year", "Fires")} \\
+
+\noindent \texttt{d <- sum(d\$Fires)} \\
+
+\noindent \texttt{d <- d - c - b - a} \\
+
+\noindent \texttt{dp <- (d/int)*100} \\
+
+\noindent \textbf{Fire size class (e)}. \\
+
+\noindent \texttt{e <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 1000)} \\
+
+\noindent \texttt{burn <- aggregate(e\$FINAL\_SIZE, by=list(e\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+                     
+\noindent \texttt{e <- aggregate(e\$FINAL\_SIZE, by=list(e\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(e) <- c("Year", "Fires")} \\
+
+\noindent \texttt{e <- sum(e\$Fires)} \\
+
+\noindent \texttt{e <- e - d - c - b - a} \\
+
+\noindent \texttt{ep <- (e/int)*100} \\
+
+\noindent \textbf{Fire size class (f)}. \\
+
+\noindent \texttt{f <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 10000)} \\
+
+\noindent \texttt{burn <- aggregate(f\$FINAL\_SIZE, by=list(f\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+                     
+\noindent \texttt{f <- aggregate(f\$FINAL\_SIZE, by=list(f\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(f) <- c("Year", "Fires")} \\
+
+\noindent \texttt{f <- sum(f\$Fires)} \\
+
+\noindent \texttt{f <- f - e - d - c - b - a} \\
+
+\noindent \texttt{fp <- (f/int)*100} \\
+
+\noindent \textbf{Fire size class (g)}. \\
+
+\noindent \texttt{g <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE > 10000)} \\
+
+\noindent \texttt{burn <- aggregate(g\$FINAL\_SIZE, by=list(g\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+               
+\noindent \texttt{g <- aggregate(g\$FINAL\_SIZE, by=list(g\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(g) <- c("Year", "Fires")} \\
+
+\noindent \texttt{g <- sum(g\$Fires)} \\
+
+\noindent \texttt{gp <- (g/int)*100}
+
+\subsubsection{Fire--size Distributions (a-g) in the Measured zone}
+\noindent Total fires in MEA. \\
+
+\noindent \texttt{mea <- 1643} \\
+
+\noindent \textbf{Fire size class (a)}. \\
+
+\noindent \texttt{a <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 0.4)} \\
+
+\noindent \texttt{burn <- aggregate(a\$FINAL\_SIZE, by=list(a\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+                     
+\noindent \texttt{a <- aggregate(a\$FINAL\_SIZE, by=list(a\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(a) <- c("Year", "Fires")} \\
+
+\noindent \texttt{a <- sum(a\$Fires)} \\
+
+\noindent \texttt{ap <- (a/mea)*100} \\
+
+\noindent \textbf{Fire size class (b)}. \\
+
+\noindent \texttt{b <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 4)} \\
+
+\noindent \texttt{burn <- aggregate(b\$FINAL\_SIZE, by=list(b\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+                     
+\noindent \texttt{b <- aggregate(b\$FINAL\_SIZE, by=list(b\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(b) <- c("Year", "Fires")} \\
+
+\noindent \texttt{b <- sum(b\$Fires)} \\
+
+\noindent \texttt{b <- b - a} \\
+
+\noindent \texttt{bp <- (b/mea)*100} \\
+
+\noindent \textbf{Fire size class (c)}. \\
+
+\noindent \texttt{c <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 40)} \\
+
+\noindent \texttt{burn <- aggregate(c\$FINAL\_SIZE, by=list(c\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+                     
+\noindent \texttt{c <- aggregate(c\$FINAL\_SIZE, by=list(c\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(c) <- c("Year", "Fires")} \\
+
+\noindent \texttt{c <- sum(c\$Fires)} \\
+
+\noindent \texttt{c <- c - b - a} \\
+
+\noindent \texttt{cp <- (c/mea)*100} \\
+
+\noindent \textbf{Fire size class (d)}. \\
+
+\noindent \texttt{d <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 200)} \\
+
+\noindent \texttt{burn <- aggregate(d\$FINAL\_SIZE, by=list(d\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+                     
+\noindent \texttt{d <- aggregate(d\$FINAL\_SIZE, by=list(d\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(d) <- c("Year", "Fires")} \\
+
+\noindent \texttt{d <- sum(d\$Fires)} \\
+
+\noindent \texttt{d <- d - c - b - a} \\
+
+\noindent \texttt{dp <- (d/mea)*100} \\
+
+\noindent \textbf{Fire size class (e)}. \\
+
+\noindent \texttt{e <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 1000)} \\
+
+\noindent \texttt{burn <- aggregate(e\$FINAL\_SIZE, by=list(e\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+                     
+\noindent \texttt{e <- aggregate(e\$FINAL\_SIZE, by=list(e\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(e) <- c("Year", "Fires")} \\
+
+\noindent \texttt{e <- sum(e\$Fires)} \\
+
+\noindent \texttt{e <- e - d - c - b - a} \\
+
+\noindent \texttt{ep <- (e/mea)*100} \\
+
+\noindent \textbf{Fire size class (f)}. \\
+
+\noindent \texttt{f <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 10000)} \\
+
+\noindent \texttt{burn <- aggregate(f\$FINAL\_SIZE, by=list(f\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+                     
+\noindent \texttt{f <- aggregate(f\$FINAL\_SIZE, by=list(f\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(f) <- c("Year", "Fires")} \\
+
+\noindent \texttt{f <- sum(f\$Fires)} \\
+
+\noindent \texttt{f <- f - e - d - c - b - a} \\
+
+\noindent \texttt{fp <- (f/mea)*100} \\
+
+\noindent \textbf{Fire size class (g)}. \\
+
+\noindent \texttt{g <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE > 10000)} \\
+
+\noindent \texttt{burn <- aggregate(g\$FINAL\_SIZE, by=list(g\$FIRE\_YEAR),sum)} \\
+
+\noindent \texttt{burn <- mean(burn\$x)} \\
+               
+\noindent \texttt{g <- aggregate(g\$FINAL\_SIZE, by=list(g\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(g) <- c("Year", "Fires")} \\
+
+\noindent \texttt{g <- sum(g\$Fires)} \\
+
+\noindent \texttt{gp <- (g/mea)*100}
+
+\subsection{Forest Fire Statistics}
+The number of suppressed and unsuppressed fires in both Measured and Intensive zones, per ecoregion. \\
+
+\noindent Calculate the number of arrivals per year. \\
+
+\noindent \texttt{Nt <- aggregate(omnr.total\$FINAL\_SIZE, by=list(omnr.total\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(Nt) <- c("Year", "Fires")} \\
+
+\noindent Calculate total number of fires. \\
+
+\noindent \texttt{N <- sum(Nt\$Fires)} \\
+
+\noindent Calculate number of small (<3 ha) fires. \\
+
+\noindent \texttt{omnr.small <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE < 3)} \\
+                     
+\noindent \texttt{small <- aggregate(omnr.small\$FINAL\_SIZE, by=list(omnr.small\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(small) <- c("Year", "Fires")} \\
+
+\noindent \texttt{small <- sum(small\$Fires)} \\
+
+\noindent \texttt{percent.small <- (small/N)*100} \\
+
+\noindent Calculate number of large (>200 ha) fires. \\
+
+\noindent \texttt{omnr.big <- subset(omnr.total, subset = omnr.total\$FINAL\_SIZE > 200)} \\
+
+\noindent \texttt{big <- aggregate(omnr.big\$FINAL\_SIZE, by=list(omnr.big\$FIRE\_YEAR),length)} \\
+
+\noindent \texttt{names(big) <- c("Year", "Fires")} \\
+
+\noindent \texttt{big <- sum(big\$Fires)} \\
+
+\noindent \texttt{percent.big <- (big/N)*100} \\
+
+\noindent Calculate number of suppressed fires. \\
+
+\noindent \texttt{suppressed <- N-(big + small)} \\
+
+\noindent \texttt{percent.suppressed <- (suppressed/N)*100} \\
+
+\noindent \textbf{Details of the Machine used for this analysis:}
+
+\begin{Schunk}
+\begin{Sinput}
+> print(sessionInfo(), locale=FALSE)
+\end{Sinput}
+\begin{Soutput}
+R version 2.15.0 (2012-03-30)
+Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] tools_2.15.0
+\end{Soutput}
+\end{Schunk}
+
+
+
+
+\end{spacing}
+\end{document}

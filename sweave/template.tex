@@ -1,250 +1,0 @@
-\documentclass[12pt]{article} %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%
-%%%
-%%%
-%%% mjm / 2007-10-04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%% options to change font. If you want to play with MinionPro,
-%%% come bug me sometime. --mike
-%%% LOTS OF COOL FONT INFO AT http://www.tug.dk/FontCatalogue/
-%%% NO NEED EVER TO USE COMPUTER MODERN, AN ABOMINATION
-\usepackage{times}
-%\usepackage{cmbright}
-%\renewcommand\sfdefault{phv}% use helvetica for sans serif
-%\renewcommand\familydefault{\sfdefault}% use sans serif by default
-%\usepackage[opticals,textosf,minionint,footnotefigures,medfamily]{MinionPro}
-\usepackage{bm} % special for 'bold math' greekletters.
-
-%% Alter some LaTeX defaults for better treatment of figures:
-%% This is from the first result of google: "latex dumb defaults"
-    \renewcommand{\topfraction}{0.9}	
-    \renewcommand{\bottomfraction}{0.8}	
-    %   Parameters for TEXT pages (not float pages):
-    \setcounter{topnumber}{2}
-    \setcounter{bottomnumber}{2}
-    \setcounter{totalnumber}{4}     
-    \setcounter{dbltopnumber}{2}    
-    \renewcommand{\dbltopfraction}{0.9}	
-    \renewcommand{\textfraction}{0.07}	
-    %   Parameters for FLOAT pages (not text pages):
-    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
-	% N.B.: floatpagefraction MUST be less than topfraction !!
-    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
-
-%%% Enable the bibliography
-%%%     see  http://merkel.zoneo.net/Latex/natbib.php
-%%% 
-%%% round: use () for in-text cites (other options square, curly, angle)
-%%% sort: orders multiple citations into the sequence in which they 
-%%%       appear in the list of references;
-%%% sort&compress: as sort but in addition multiple numerical
-%%%                citations are compressed if possible (as 3-6, 15);
-%%% numbers: for numerica citations
-%%% super:   superscripted numbers as in Nature
-\usepackage[round]{natbib}
-%%% Want to change the section head of the bib??
-%\AtBeginDocument{\renewcommand\refname{LITERATURE CITED}}
-
-%%% Set up the margins: "right" and "bottom" are computed
-%%% by adding the things specified here, so
-%%%  .5in + 7.5in = 8in = .5 right margin
-\oddsidemargin=-.5in
-\textwidth=7.5in
-\topmargin=-0.5in
-\headheight=0.0in
-\headsep=0.0in
-\textheight=9.5in
-
-%%% This is how you set  line spacing globally inside []
-%%% Options are "singlespacing","onehalfspacing","doublespacing"
-%%% To change WITHIN the document (you want a section single spaced)
-%%% just drop in, where needed, \singlespacing
-%%% and then \doublespacing again when finished.
-\usepackage[singlespacing]{setspace} 
-
-%\usepackage{egameps} % See Martin Osborne's documentation!
-%\usepackage{sgame} % See Osborne
-\usepackage{hyperref} % \href{http://link.com}{link text}
-\usepackage{graphicx} % for figures of all kinds
-
-%% Caption labels bold. Always left-align, do not center short ones.
-%% Use . instead of : after label. Size option.
-\usepackage[bf,nooneline,labelsep=period,footnotesize]{caption}
-\usepackage{color}
-\usepackage{dcolumn}  % enable decimal align tables
-%\usepackage{wrapfig}  % wrappable figures
-
-%%% How to treat new paragraphs: units are anything that latex
-%%% understands: in, mm, pt, cm, [em, ex (typographic units!)]
-\setlength{\parindent}{1em} % 1em  indent first line
-\setlength{\parskip}{0.5ex} % half x-height space between para
-
-%%% Working Example of how you specify shortcut macros:
-\newcommand{\ybar}{\ensuremath{\overline{y}}}
-
-%%% Other options: Options>Soft wordwrap for easy viewing
-%%% Italics and Bold: ctrl+C,F,I (C-c, C-f, C-i) for inserting italicized text. 
-%%% CFB for bold.
-%%% rm sf tt md bf up it sl sc 
-%%% Drag citations from Bibdesk
-%%% single - for intraword hyphen. Anything longer, use two -- or three ---
-
-%%% Figures. Wrapfigure at Right Left or Center.
-%%% Set bounding box size (same as figure size).
-%%% Insert your figure BEFORE the text. 
-%%% Subsequent text will wrap around the figure.
-
-%%% Normally, just use figure environment.
-%%% To insert a figure, drag the icon (without typing the command!) 
-%%% from the finder and it will insert.
-%%% Type width= or height= in the [options] before the {argument}.
-%%% Latex>Insert Envt>Figure (figure* means no number)
-%%% "Figure #." is handled by latex, not you. Just type.
-%%% To refer to a figure (or any \label) type \ref{thelabel}
-%%% in text or use Ref menu, "C-c )" emacs will do it for you.
-
-\begin{document}
-\thispagestyle{empty} % No page number first page
-
-    \title{\rmfamily\normalfont\spacedallcaps{Masters Dissertation Plan}}
-    \author{\spacedlowsmallcaps{Craig Robert Shenton}}
-    \date{} % no date
-    
-    \maketitle
-
-\begin{spacing}{1.5}
-
-\vspace{5em}
-
-Project Background\\
-
-The boreal forest of Canada are one of the world's largest stores of carbon, provide a vast array of ecosystem services, and are home to valuable biological diversity. The forest have also played a prominent role in Canada's social and economic development (Drushka, 2003). It is therefore, no wonder that public fire management agencies expend great deal of effort and resources fighting the seasonal wildfires that threaten this valuable resource (Martell 2001). In the fire management literature, it has long been assumed that these fire suppression efforts are effective (Cumming 2005:772). However, in recent years, fire ecologists have begun to question the received wisdom (Miyanishi {\it et al}. 2002). \\
-
-The case for effective fire suppression rests on a number of retrospective comparisons between forest regions in Ontario, Canada (Stocks 1991, Ward and Tithecott 1993; Martell 1994; Ward {\it et al.} 2001). These studies compared the size distributions of forest fires in areas with and without aggressive fire suppression policies, in order to measure the effectiveness of fire suppression at reducing the annual area of forest burned (Cumming 2005:772-773). The results revealed a highly right-skewed distribution in areas with aggressive fire suppression and a relatively flat distribution in areas without such policies. The authors concluded that fire suppression had been successful at reducing the annual area burned over recent decades (Bridge {\it et al.} 2005:43). \\
-
-\clearpage
-\phantom \\
-
-However, Miyanishi {\it et al.} (2002; also see Johnson {\it et al.} 2001; Miyanishi and Johnson 2001) argue that these studies failed to control for various spatial and temporal factors, (e.g. the underlying fire-size distributions, the fire-detection efficiency and the probability that small fires are recorded), which have been shown to distort the results of similar studies, and on that basis should be considered unsound. \\
-
-While both parties agree that fire suppression is primarily intended to reduce the annual area of forest burned, neither have been able to established a workable definition of fire suppression 'effectiveness' (Cumming 2005:781). Cumming (2005:773) has argued that a definition of 'effectiveness' only requires that annual burn rates with aggressive fire suppression be lower than they would have been without it. \\
-
-Research Design\\
-
-A quasi-experimental method will be developed that is capable of accurately measuring the effectiveness of forest fire suppression, while also accounting for the spatial and temporal factors outlined by Miyanishi {\it et al.} (2002). This method will involve comparing the distribution of 'large' (i.e., greater than 200 hectares) fires between two areas with contrasting forest fire suppression management strategies. The two study areas, denoted as the Intensive Strategy ($S_{\mathrm{i}}$) zone and the Measured Strategy ($S_{\mathrm{m}}$) zone, will be selected to control for the spatial and temporal factors outlined above, and largely correspond with the so-called 'Intensive' and 'Measured' zones, as defined my the Ontario Ministry of Natural Resources (1997). \\The only difference between these zones is that all fires in the intensive zone are aggressively attacked until extinguished, where as in the measured zone, fires that grow greater than 3 hectares (which are said to have 'escaped') are assessed on a cost benefit analysis as to whether continued action should take place (Hirsch {\it et al.} 1998). 
-
-\clearpage
-\phantom \\
-
-As such, it can be said that the amount of fire suppression effort being employed in the intensive zone is greater than that being employed in the measured zone. With this distinction, it will be possible to use statistical methods to calculate whether the annual proportion of large fires is dependent on the fire suppression strategy being employed. If fire managers are correct and fire suppression is effective, the annual proportion of large fires would be expected to be lower in the intensive zone than the measured zone. However, if the opposite is found to be true, the effectiveness of fire suppression will be in doubt. \\
-
-Hypotheses \\$H_{\mathrm{0}}$ $\Leftarrow$ Null hypothesis: that the annual proportion of large fires is independent of the amount of fire suppression effort being employed. \\$H_{\mathrm{S}}$ $\Leftarrow$ Strategy hypothesis: that the annual proportion of large fires is dependent on the fire suppression strategy being employed$\ast$. \\$\ast$ With the annual proportion of large fires expected to be lower in the Intensive Strategy ($S_{\mathrm{i}}$) zone than the Measured Strategy ($S_{\mathrm{m}}$) zone, if fire suppression is effective. \\
-
-Materials and Sources \\
-
-The analysis will use annual fire statistics over the period 1960-2009, derived from provincial fire management records in the Ontario Ministry of Natural Resources (OMNR) fire database. This database is an archive of all fires detected and reported to the provincial aviation and forest fire management centre. Each fire report includes many variables such as: location, size, forest type, weather, and fire suppression information. The R system for statistical computation (R Development Core Team 2004), Sweave (Leisch 2002) and the R-Studio Integrated Development Environment (R-Studio Development Team 2011) will be used to perform the analysis. \\
-
-\clearpage
-\phantom \\
-Statistical Methods\\
-
-From provincial fire management records in the Ontario Ministry of Natural Resources (OMNR) fire database the following annual statistics will be calculated:\\
-
-\begin{tabular}{ll}
-$E_{\mathrm{t}}$     & the annual number of escapes (i.e., fires  $\geq$3 {\it ha})\\
-$L_{\mathrm{t}}$     & the annual number of large fires (i.e., fires $\geq$200 {\it ha})\\
-\end{tabular}\\
-
-As Cumming (2005:775) suggests, the observed annual distribution of fires ($L_{\mathrm{t}}$ / $E_{\mathrm{t}}$) will be used as an estimate of the annual probability ($\rho{\mathrm{t}}$) that a randomly chosen escaped fire ($E$) will fail to be suppressed and become a large fire ($L$). \\
-
-Conditional on $E_{\mathrm{t}}$ (i.e., the annual number of escapes), $L_{\mathrm{t}}$ (i.e., the annual number of large fires) will, therefore, be a {\it binomial random variable} with an expected value of $L_{\mathrm{t}}$ $\rho{\mathrm{t}}$ and variance $L_{\mathrm{t}}$ $\rho{\mathrm{t}}$ (1 $-$ $\rho{\mathrm{t}}$). As such, the hypotheses $H_{\mathrm{0}}$ and $H_{\mathrm{S}}$ can be operationalised as logistic regression models of the annual variation in $\rho{\mathrm{t}}$, and tested by regressing the observations against the suppression strategy ($S_{\mathrm{i}}$ or $S_{\mathrm{m}}$) being employed. \\
-
-Deliverables\\
-
-\begin{description}
-\item[a)]
-Present conclusive proof as to whether forest fire suppression in Ontario has been effective.
-\item[b)]
-A thorough explanation of how un-controlled for spatial and temporal factors distorted the results of previous studies.
-\item[c)]
-A discussion of how the implications of this study should affect the strategies available to forest managers and policy makers in Ontario.
-\item[d)]
-An outline of the the methodological problems associated with retrospective statistical analysis.
-\end{description}
-
-\clearpage
-\phantom \\
-
-Timetable\\
-
-Figure 1 shows the planned timetable from which this project will work towards completion. \\
-
-\begin{table}[ht]\caption{Planned Timetable of Completion}
-\phantom \\\centering\begin{tabular}{l r}\hline\hlineDate & Work Completed \\ [0.5ex] % inserts table %heading\hlineJun $13^{\mathrm{th}}$ & Literature Review ($\sim$5000 words) \\July $1^{\mathrm{st}}$ & Statistical Calculations \\Aug $1^{\mathrm{st}}$ & Research Design, Methodology, Results ($\sim$5000 words) \\Aug $20^{\mathrm{th}}$ & Discussion ($\sim$5000 words) \\Sep $3^{\mathrm{rd}}$ & Final Dissertation ($\sim$15000 words)\\ [1ex]\hline\end{tabular}\label{table:nonlin}\end{table}
-
-Preliminary Table of Contents\\
-\begin{description}
-\item[1.]
-Introduction
-\item[2.]
-Literature Review
-{\setlength\itemindent{1pt}\item[2.1] Fire Management in Ontario}
-{\setlength\itemindent{1pt}\item[2.2] The Effectiveness of Fire Suppression}
-{\setlength\itemindent{1pt}\item[2.3] The Fire-Ecologist's Challenge}
-\item[3.]Research Design
-\item[4.]Methodology
-{\setlength\itemindent{1pt}\item[4.1]Statistical Methods}
-\item[5.]Results
-\item[6.]
-Discussion
-{\setlength\itemindent{1pt}\item[6.1]Forest Fire-Ecology}
-{\setlength\itemindent{1pt}\item[6.2]Implications for Fire Suppression Policy} {\setlength\itemindent{1pt}\item[6.3]The Limits of Statistical Analysis}
-\item[7.]
-Conclusion
-\item[]
-Bibliography
-\item[]
-Appendices
-\end{description}
-
-\end{spacing}
-
-\clearpage
-\phantom \\
-
-References\\
-    
-Bridge, S.R.J., Miyanishi, K. and Johnson, E.A. 2005. A Critical Evaluation of Fire Suppression Effects in the Boreal Forest of Ontario. {\it Forest Science}, 51(1), 41-50.\\
-
-Cumming, S.G. 2005. Effective fire suppression in boreal forests. {\it Canadian Journal of Forest Research}, 35(4), 772-786.\\ 
-
-Drushka, K. 2003. {\it Canada's forests: a history.} Montreal: McGill Queen's University Press.\\ 
-
-Hirsch, K.G., Corey, P.N., and Martell, D.L. 1998. Using expert judgment to model initial attack fire crew effectiveness. {\it Forest Science}, 44, 539-549.\\
-
-Johnson, E.A., Miyanishi, K. and Bridge, S.R.J., 2001. Wildfire Regime in the Boreal Forest and the Idea of Suppression and Fuel Buildup. {\it Conservation Biology}, 15(6), 1554-1557.\\
-
-Leisch, F. 2002. Sweave: Dynamic generation of statistical reports using literate data analysis. In "Compstat 2002 - Proceedings in Computational Statistics" (Eds) Härdle, W. and Rönz, B., 575-580.\\
-
-Martell, D.L. 1994. The impact of fire on timber supply in Ontario. {\it The Forestry Chronicle}, 70, 164-173.\\
-
-Martell, D.L. 2001. Forest fire management. In {\it Forest Fires: behavior and ecological effects}. E.A. Johnson and K. Miyanishi (Eds). San Diego, California: Academic Press, 572-583.\\
-
-Miyanishi, K., and Johnson, E.A. 2001. A re-examination of the effects of fire suppression in the boreal forest. {\it Canadian Journal of Forest Research}, 31, 1462-1466.\\Miyanishi, K., Bridge, S.R.J., and Johnson, E.A. 2002. Wildfire regime in the boreal forest. {\it Conservation Biology}, 16(5), 1177-1178.\\
-
-Ontario Ministry of Natural Resources / Minist\'{e}re des Richesses Naturelles (OMNR). 1997. {\it Ontario's fire management strategies: Background, current state, and future challenges}. Toronto, Canada.\\R Development Core Team. 2004. {\it R: a language and environment for statistical computing}. R Foundation for Statistical Computing, Vienna, Austria.\\
-
-R-Studio Development Team. 2011. {\it R-Studio Integrated Development Environment} (Version 2.13.0). [Computer program] Available at: http://w- ww.rstudio.org/. [Accessed 09 Apr 2012].\\
-
-\clearpage
-\phantom \\Stocks, B.J. 1991. The extent and impact of forest fires in northern circumpolar countries. In {\it Global biomass burning: atmospheric, climatic and biospheric implications}. Cambridge, MA: MIT Press.\\Strauss, D., Bednar, L., and Mees, R. 1989. Do one percent of forest fires cause ninety-nine percent of the damage? {\it Forest Science}, 35(2), 319-328.\\Ward, P.C., and Tithecott, A.G. 1993. {\it Impact of fire management on the boreal landscape of Ontario}. Ministry of Natural Resources, Aviation, Flood and Fire Management Branch, Sault Sainte, Marie, Ontario, 305.\\Ward, P.C., Tithecott, A.G., and Wotton, B.M. 2001. Reply-A re-examination of the effects of fire suppression in the boreal forest. {\it Canadian Journal of Forest Research}, 31, 1467-1480.\\ 
-
-
-
-\singlespacing
-\bibliography{mjm}
-\bibliographystyle{apsr}
-
-\end{document} 

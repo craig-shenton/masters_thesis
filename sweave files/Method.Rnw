@@ -1,0 +1,218 @@
+\documentclass{article}
+\usepackage{setspace} 
+\usepackage{graphicx}
+\addtolength{\topmargin}{-.575in}
+\addtolength{\textheight}{1.25in}
+
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\begin{spacing}{1.5}
+\phantom
+\phantom
+\phantom
+\phantom
+\section{Methodology}
+\phantom
+\phantom
+\noindent Note: The full R code used in the analysis is available both in print (\emph{Appendix A}) and executable format-- within the sweave (\texttt{.Rnw}) version of this file (\texttt{https://github.com/craigrshenton/masters\_thesis}).
+
+\subsection{Operationalising the Hypotheses}
+
+Operationalising the hypotheses described in \emph{Chapter 3.1}, will employ a method similar to Cumming's (2005) approach. This method is relatively simple and well known to researchers performing clinical trails, to whom it is know as a Bernoulli trial (Papoulis 1984). \\
+
+\noindent A Bernoulli trial consists of an experiment in which the outcome is a random variable with one of two possible values-- '\texttt{success}' or '\texttt{failure}' (known as a binomial random variable). Convention has it that these values are encoded as follows: \\
+
+\begin{tabular}{ll}
+\texttt{0 = failure} \\
+\texttt{1 = success} \\
+\end{tabular}\\
+
+\noindent In each experiment, the probability of a randomly chosen outcome being successful is denoted as ($p$) and the probability of failure ($q$). The relationship between ($q$) and ($p$) is given by: \\
+
+\begin{tabular}{l}
+\texttt{$q$ = 1 - $p$} \\
+\end{tabular}\\
+
+\noindent The collective results of a number of statistically independent Bernoulli trials are known as a binomial experiment, with the output being a binomial distribution of probabilities or probability ratios. \\
+
+\noindent Binomial experiments are often used to determine the effectiveness of a new drug in a clinical setting. One of the first uses of binomial experiments was in biological assay (bioassay) research (Finney, 1973). This is where researchers administer poisonous substances to animals in order to determine its lethal effect. One would expect that the greater the dose, the greater the number of animals killed. Or in other words, the probability of death is expected to be dependent on the dosage of poison administered. A binomial experiment would be used here to show that the probability of an animal being killed by the poison is significantly greater when given a high dosage, than when given a low dosage. Thereby proving the effectiveness is in fact dependent on the dosage. \\
+
+\noindent For this study, the 'dosage' can be considered equivalent to the amount of fire suppression being deployed, which is expected to increase the number of fires successfully suppressed (i.e., increase the effectiveness). Specifically, we are interested in two different strategies (or 'dosages') of fire suppression. In the Intensive zone a strategy of high levels of suppression is employed and in the Measured zone, a strategy of low(er) levels of suppression is employed. Of course, in this study the 'trails' are retrospective, having already happened in the past. Therefore, can only be considered quasi-experimental. \\
+
+\noindent As in the Bernoulli trial, the outcome of each fire being attacked with differing levels of suppression, is a random variable with one of two possible values-- '\texttt{success}' or '\texttt{failure}'. As previously discussed (see \emph{Chapter 3.1}), I decided that fires burning more than 200 hectares would signify a failure of continued suppression. Therefore, fires with a final burn area of less that 200 hectares, are considered as having been successfully suppressed. A logic operation was used to determine the number of fires both suppressed and unsuppressed (see \emph{Appendix A: 1}). \\
+
+<<echo=FALSE>>=
+# With the OMNR dataset .csv file downloaded to the working directory, the file is loaded into R.
+
+omnr <- read.csv("OMNR_data.csv")
+
+# A simple operation sub-divides the dataset into fires in the Intensive (INT) and Measured (MEA) fire management zones.
+
+omnr.clean <- subset(omnr, subset = omnr$FIRE_MGT_ZONE == "MEA" | omnr$FIRE_MGT_ZONE == "INT")
+@
+
+\begin{tabular}{ll}
+\texttt{Suppressed ($p$) = Final Size $\geq$ 3 ha \& Final Size $\leq$ 200 ha} \\
+\texttt{Unsuppressed ($q$) = Final Size $\leq$ 200 ha} \\
+\end{tabular}\\
+
+\noindent Another logic operator was used sub-divides the dataset into fires in the Intensive (\texttt{INT}) and Measured (\texttt{MEA}) fire management zones (see \emph{Appendix A: 1.1}). \\
+
+\begin{tabular}{ll}
+\texttt{Fire Management Zone = "MEA" \& Fire Management Zone = "INT"}
+\end{tabular}\\
+
+\clearpage
+
+\noindent To sub-divide the dataset into the three ecoregions (3E, 3W and 3S)  required for the analysis, another logic operator was used that delineates fires along both latitude and longitude. \\
+
+<<echo=FALSE>>=
+# The dataset is again sub-divided into the three ecoregions (3E, 3W and 3S) using logic operations that delineate along both latitude and longitude.
+
+omnr.3E <- subset(omnr.clean, subset = (omnr.clean$LATITUDE>=48 & omnr.clean$LATITUDE<=51) & (omnr.clean$LONGITUDE<=-80 & omnr.clean$LONGITUDE>=-86))
+
+omnr.3W <- subset(omnr.clean, subset = (omnr.clean$LATITUDE>=48 & omnr.clean$LATITUDE<=51) & (omnr.clean$LONGITUDE<=-88 & omnr.clean$LONGITUDE>=-92))
+
+omnr.3S <- subset(omnr.clean, subset = (omnr.clean$LATITUDE>=51 & omnr.clean$LATITUDE<=53) & (omnr.clean$LONGITUDE<=-88 & omnr.clean$LONGITUDE>=-96))
+@
+
+
+\begin{tabular}{ll}
+\texttt{3E = (Lat $\geq$ 48$\,^{\circ}{\rm N}$ \& $\leq$ $51\,^{\circ}{\rm N}$) + (Long $\leq$ -$80\,^{\circ}{\rm W}$ \& $\geq$ -$86\,^{\circ}{\rm W}$)} \\
+
+\texttt{3W = (Lat $\geq$ $48\,^{\circ}{\rm N}$ \& $\leq$ $51\,^{\circ}{\rm N}$) + (Long $\leq$ -$88\,^{\circ}{\rm W}$ \& $\geq$ -$92\,^{\circ}{\rm W}$)} \\
+
+\texttt{3S = (Lat $\geq$ $51\,^{\circ}{\rm N}$ \& $\leq$ $53\,^{\circ}{\rm N}$) + (Long $\leq$ -$88\,^{\circ}{\rm W}$ \& $\geq$ -$96\,^{\circ}{\rm W}$)} \\
+\end{tabular}\\
+
+\noindent From these operators, the following statistics were calculated for each ecoregion and each fire management zone (see \emph{Appendix A: 1.2--1.3}): \\
+
+\begin{tabular}{lll}
+\texttt{S  = the number of successfully suppressed fires.} \\
+\texttt{E  = the number of escaped (i.e., unsuppressed) fires.} \\
+\texttt{N  = the total number of fires (S + E).} \\
+\end{tabular}\\
+
+\noindent The results of which are saved as a new dataframe \texttt{omnr.glm} (see \emph{Table~\ref{tab1}}).
+
+<<echo=FALSE>>=
+# Creating a new data frame of the number of suppressed unsuppressed fires in each ecoregion/fire management zone (data taken from the results of previous calculations).
+
+omnr.glm <- data.frame(zone=rep(c("mea","int"),c(3,3)), ecoregion=rep(c("E3","W3","S3")),suppressed=c(60,194,111,152,91,44),unsuppressed=c(20,67,19,20,43,10))
+@
+
+\begin{center}
+<<echo=FALSE,results=tex>>=
+      library(xtable)
+      glm.table <-xtable(omnr.glm,align="l|l|r|r|r|", caption="Summary of the omnr.glm dataframe.", label="tab1")
+      digits(glm.table) <- 0
+      print(glm.table, include.rownames=FALSE)
+@
+\end{center}
+\noindent As Cumming (2005:775) suggests, the distribution of fires in each area will be an estimate of the probability ($p$), that a randomly chosen fire will be suppressed. This binomial random variable will have an expected value of $N\times p$ and a variance of $N\times p(1-p)$. \\
+
+\noindent The hypotheses $H_{\mathrm{0}}$ and $H_{\mathrm{S}}$ can now be tested by regressing the observed  suppression probabilities ($p$) against the fire management strategy being employed, while controlling for the environmental factors outlined in \emph{Chapter 3.3}. \\
+
+\clearpage
+\subsection{Assumptions}
+
+Several assumption have been made in this analysis: \\
+
+\begin{description}
+\item[(i)]
+It is assumed that the fire detection resolution in both the Intensive and Measured fire management zones to have been both similar and constant over the study period (1989--2004). This is evidenced by reports in Ward and Tithecott (1993); Ward, Tithecott and Wotton (2001); and Cumming (2005).\\
+
+\item[(ii)]
+It is assumed that all new fires in both fire management zones are actioned in a consistent manner over the study period. While I have no reason to doubt this assumption, further analysis could detect any differences by looking into the deployment records (i.e., number of fire fighters, spotters, helicopters, and so on). Unfortunately, performing this analysis was beyond the scope of this study. \\
+
+\item[(iii)]
+It is assumed that each new forest fire is an independent event. That is to say that each fire is not a causal factor in the distribution of subsequent fires. The veracity of this assumption is discussed in \emph{Chapters 5.6.1}, and \emph{6.???}
+\end{description}
+
+\subsection{Generalised Liner Models}
+
+Cumming (2005:774) argues that the standard linear regression methods used for hypothesis testing are not suitable for binomial experiments. This is because the suppression probability ($p$) is a binomial variable (i.e., is bounded on both ends, with values in the range [$0, 1$]). This means that ($p$) is an odds ratio and, therefore requires a log--odds model. In addition, the variance in p is heteroscedastic (i.e., not all variables have the same variance), which can invalidate statistical tests of significance if not accounted for in the research design (Dobson 2002: Chapter 7.2). \\
+
+\noindent Instead, the hypothesis tests will be formulated as generalised linear models (not to be confused with \emph{general} liner models), which were formulated by John Nelder and Robert Wedderburn (1972). The generalisation of linear regression allows the use of a response variable that does not have a normal (or Gaussian) distribution. This is achieved by a link function. While the choice of link function is somewhat arbitrary, McCullagh and Nelder (1983: Chapter 4.1.5) suggest that the logit link is most appropriate for retrospective binomial experiments, as it is the natural log of odds (log odds). \\
+
+\noindent The logit link outlines the relationship between the linear predictor and the non-normal distribution (in this case, a binomial distribution). The linear predictor $\eta$ (the Greek letter ``eta'') shows how the suppression probability ($p$) is related to the parameters $\beta$, and their coefficients $x$ by the equation: \\
+
+$\eta = \beta x$ \\
+
+\noindent The logit link used for this analysis can therefore, be expressed as (Dobson 2002: Chapter 7.3): \\
+
+$\beta x = \log p(1-p)$
+
+\subsection{Testing the Hypotheses}
+
+The null hypothesis ($H_{\mathrm{0}}$) implies that the suppression probabilities $p$ should be similar over the whole study area. This will be estimated using \texttt{model 0} (null) as follows: \\
+
+\texttt{logit} $p = {\beta}_{0}$ \\
+
+\noindent If the difference in strategy has improved the effectiveness of fire suppression ($H_{\mathrm{S}}$), the suppression probability ($p$) should be larger in the intensive zone than in the measured zone.  Which will be estimated using \texttt{model} $S$ (strategy): \\
+
+\texttt{logit} $p = {\beta}_{0} + {\beta}_{1}$ \texttt{zone}. \\
+
+\noindent To control for environmental factors, another interaction term is needed that accounts for the differences between the ecoregions \texttt{3E, 3W} and \texttt{3S}. The full \texttt{model} $SE$ (strategy + ecoregion) therefore, is as follows: \\
+
+\texttt{logit} $p = {\beta}_{0} + {\beta}_{1}$ \texttt{zone} $+  {\beta}_{2}$ \texttt{ecoregion}. \\
+
+\noindent It should be noted that the response variable is usually binary coded (i.e., $0 =$ failure and $1 =$ success), however, the variables (or 'vectors' in R) '\texttt{suppressed}' and '\texttt{unsuppressed}' are not binary by default. Rather than convert these variables by hand, it is possible to simply bind them into a matrix using the \texttt{cbind()} command in R, which achieves the same result. \\
+
+\noindent Using this method leads to the following equation: \\
+
+\texttt{glm.eq =} ''\texttt{cbind(suppressed, unsuppressed)} $~$ \texttt{zone + ecoregion}'' \\
+
+\noindent The final generalised liner model with logit link function is, therefore, as follows: \\
+
+\texttt{glm(glm.eq, family=binomial(logit), data=omnr.glm) }\\
+
+\noindent Note: the data frame onmr.glm was created from the results of previous calculations (see \emph{Chapter 4.2}). \\
+
+\subsection{Controlling for Temporal Variation}
+
+As outlined in \texttt{Chapter 3.3.3}, the inter--annual variation in forest fires can potentially confound fire suppression efforts. Therefore, to test the effect of temporal variation has on the dataset, a further generalised liner model was developed. \\
+
+Much like in the previous analysis, the following statistics were calculated for each year over the period 1989--2004 (see \emph{Appendix A: 1.5}) \\
+
+\begin{tabular}{lll}
+\texttt{$S_{\mathrm{t}}$  = the annual number of successfully suppressed fires.} \\
+\texttt{$E_{\mathrm{t}}$  = the annual number of escaped (i.e., unsuppressed) fires.} \\
+\texttt{$N_{\mathrm{t}}$  = the total number of fires each year.} \\
+\end{tabular}\\
+
+\noindent The results of which are saved as a new data frame \texttt{temp.glm} (see \emph{Table~\ref{tab2}}).
+
+<<echo=FALSE>>=
+temp.glm <- data.frame(zone=rep(c("mea","int"),c(16,16)), year=rep(1989:2004,2),suppressed=c(49,10,52,28,5,34,58,33,21,23,12,6,6,11,10,1,137,83,12,79,42,93,199,89,73,150,83,57,101,38,77,16),unsuppressed=c(7,0,14,2,2,4,26,27,6,4,6,0,2,6,6,0,7,5,8,7,1,1,27,54,5,15,12,1,0,10,10,1),load=c(2429,1614,2559,960,743,1053,2122,1245,1634,2278,1017,644,1561,1138,1036,428,2429,1614,2559,960,743,1053,2122,1245,1634,2278,1017,644,1561,1138,1036,428))
+@
+
+\begin{center}
+<<echo=FALSE,results=tex>>=
+      library(xtable)
+      glm.table <-xtable(temp.glm,align="l|l|r|r|r|r|", caption="Summary of the temp.glm dataframe.", label="tab2")
+      digits(glm.table) <- 0
+      print(glm.table, include.rownames=FALSE)
+@
+\end{center}
+
+\noindent However, the crucial difference in this case, is that $N_{\mathrm{t}}$ is a measure of all fires each year, including fires less that 3 ha. As Cumming (2005:776) suggests, this variable is strongly correlated with the daily load (i.e., the number of fires, fire fighters have to attack simultaneously), and thus, can be used as a proxy in determining how temporal variation in fire load may impact on the effectiveness of fire suppression (see \emph{Chapter 3.3.3}). \\
+
+\noindent The same generalised liner model was used as before (i.e., a binomial, logit link model). However, to determine the significance of temporal variation in fire load, another interaction term was added, giving \texttt{model} $SL$ (strategy + load) as follows: \\
+
+\texttt{logit} $p = {\beta}_{0} + {\beta}_{1}$ \texttt{zone} $+ {\beta}_{2}$ \texttt{load}. \\
+
+\noindent Which was coded as; \\
+
+\texttt{glm.eq =} ''\texttt{cbind(suppressed, unsuppressed)} $~$ \texttt{zone + load}'' \\
+
+\noindent and; \\
+
+\texttt{glm(glm.eq, family=binomial(logit), data=temp.glm) }\\
+
+\noindent It should be noted that my original intent was to analyse both the spatial and temporal variance in one single GLM, that included all 3 interaction terms. However, it was found that the variance (standard deviation) at such a fine scale (i.e., the number of fires suppressed; per zone, per ecoregion, per year) was so large as to make a statistical test of any significance, all but impossible. This is largely due to the extreme stochastic nature of forest fires, and shows the limits of statistical analysis (see \emph{Chapter 6.???} for discussion).
+
+\end{spacing}
+\end{document}
